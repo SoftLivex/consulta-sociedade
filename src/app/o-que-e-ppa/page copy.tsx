@@ -25,6 +25,11 @@ const defaultFaqs: FaqItem[] = [
         question: 'Qual o papel da população na consulta pública?',
         answer: 'A população tem um papel ativo e decisivo na construção de um Projeto mais justo e eficaz. Participar da consulta é uma forma de exercer o direito à informação e de contribuir para o aperfeiçoamento das ações do PROEMEM II. As opiniões, dúvidas, críticas e sugestões coletadas servem como base para ajustes nas obras, nas ações socioambientais e nos mecanismos de comunicação com a comunidade.',
     },
+    {
+        question:
+            'O que é o Programa de Expansão e Melhoria Educacional (PROEMEM II)?',
+        answer: 'O PROEMEM II é um programa da Prefeitura de Manaus, financiado pelo Banco Interamericano de Desenvolvimento (BID), que tem como objetivo melhorar o acesso e a qualidade da Educação Básica no município. Ele inclui a construção, ampliação e modernização de escolas e creches, instalação de sistemas de saneamento, energia solar, acessibilidade, conectividade e segurança, além de ações pedagógicas e de gestão escolar. As intervenções estão concentradas especialmente em áreas de alta vulnerabilidade social, urbana e ribeirinha, impactando diretamente milhares de estudantes, professores e famílias.',
+    },
 ];
 
 const Faq = ({
@@ -42,16 +47,16 @@ const Faq = ({
                 <div className="mx-auto mt-14 max-w-xl">
                     {faqs.map((faq, index) => (
                         <div key={index} className="mb-8 flex gap-4">
-                            <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-tertiary text-tertiary-foreground text-xs">
+                            <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-secondary font-mono text-xs text-primary">
                                 {index + 1}
                             </span>
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
-                                    <h3 className="text-lg font-bold">
+                                    <h3 className="font-medium">
                                         {faq.question}
                                     </h3>
                                 </div>
-                                <p className="text-foreground text-pretty leading-relaxed">
+                                <p className="text-sm text-muted-foreground">
                                     {faq.answer}
                                 </p>
                             </div>
