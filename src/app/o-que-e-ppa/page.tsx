@@ -33,7 +33,7 @@ const Faq = ({
     faqs = defaultFaqs,
 }: Faq5Props) => {
     return (
-        <section className="py-16">
+        <section className="py-16 px-8">
             <div className="container mx-auto">
                 <div className="text-center">
                     <Badge className="text-xs font-medium">{badge}</Badge>
@@ -41,7 +41,7 @@ const Faq = ({
                         {heading}
                     </h1>
                 </div>
-                <div className="mx-auto mt-14 max-w-xl">
+                <div className="mx-auto mt-14 max-w-3xl">
                     {faqs.map((faq, index) => (
                         <div key={index} className="mb-8 flex gap-4">
                             <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-tertiary text-tertiary-foreground text-xs">
@@ -53,7 +53,7 @@ const Faq = ({
                                         {faq.question}
                                     </h3>
                                 </div>
-                                <p className="text-foreground text-pretty leading-relaxed">
+                                <p className="text-foreground text-pretty leading-relaxed text-justify">
                                     {faq.answer}
                                 </p>
                             </div>
