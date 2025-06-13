@@ -44,6 +44,7 @@ interface Navbar1Props {
     };
 }
 const menuDefault: Navbar1Props['menu'] = [
+    { title: 'Início', url: '/' },
     { title: 'O que é Consulta Pública', url: '/o-que-e-ppa' },
     { title: 'Como Participar', url: '/como-participar' },
     { title: 'Participe', url: '/consulta-a-sociedade' },
