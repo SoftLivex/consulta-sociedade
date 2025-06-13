@@ -21,7 +21,7 @@ import type {
 export interface InputFieldProps<T extends FieldValues>
     extends React.ComponentProps<typeof Input> {
     register: UseFormRegisterReturn<FieldPath<T>>;
-    label?: string;
+    label?: React.ReactNode;
     description?: string;
 }
 

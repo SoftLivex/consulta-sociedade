@@ -45,7 +45,9 @@ const ComoParticipar = ({
         <section className="py-16 px-8 container mx-auto flex flex-col flex-1">
             <div className="text-center">
                 <Badge className="text-xs font-medium">{badge}</Badge>
-                <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
+                <h1 className="mt-4 text-4xl font-semibold text-primary">
+                    {heading}
+                </h1>
             </div>
             <div className="flex-1 mx-auto flex flex-col items-center justify-center">
                 <div className="mt-14 flex flex-col xl:flex-row gap-10">

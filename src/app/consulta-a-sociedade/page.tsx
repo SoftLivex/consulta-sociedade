@@ -47,12 +47,12 @@ const ConsultaASociedade = ({
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
-                            className="mx-auto flex max-w-3xl flex-col gap-6 rounded-lg border p-10 w-full"
+                            className="mx-auto flex max-w-3xl flex-col gap-6 rounded-lg w-full"
                         >
                             <div className="grid w-full items-center gap-1.5">
                                 <InputField
                                     register={form.register('nome')}
-                                    label="Nome Completo"
+                                    label={<b>Nome Completo</b>}
                                     placeholder="Insira seu nome"
                                 />
                             </div>
@@ -61,36 +61,36 @@ const ConsultaASociedade = ({
                                 <InputField
                                     register={form.register('email')}
                                     type="email"
-                                    label="Email"
+                                    label={<b>E-mail</b>}
                                     placeholder="email@email.com"
                                 />
                             </div>
                             <div className="grid w-full items-center gap-1.5">
                                 <InputField
                                     register={form.register('telefone')}
-                                    label="Telefone"
+                                    label={<b>Telefone</b>}
                                     placeholder="(92) 9 0000-0000"
                                 />
                             </div>
                             <div className="grid w-full items-center gap-1.5">
                                 <InputField
                                     register={form.register('endereco')}
-                                    label="Endereço"
+                                    label={<b>Endereço</b>}
                                     placeholder="Insira seu endereço"
                                 />
                             </div>
-                            <div className="grid w-full items-center gap-1.5">
-                                <div>
+                            <div className="grid grid-cols-1 lg:grid-cols-12 w-full items-center gap-6 lg:gap-1.5">
+                                <div className="col-span-full lg:col-span-9">
                                     <InputField
                                         register={form.register('bairro')}
-                                        label="Bairro"
+                                        label={<b>Bairro</b>}
                                         placeholder="Insira seu bairro"
                                     />
                                 </div>
-                                <div>
+                                <div className="col-span-full lg:col-span-3">
                                     <InputField
                                         register={form.register('numero')}
-                                        label="Número"
+                                        label={<b>Número</b>}
                                         placeholder="Ex: 123"
                                     />
                                 </div>
@@ -98,7 +98,7 @@ const ConsultaASociedade = ({
                             <div className="grid w-full items-center gap-1.5">
                                 <SelectField
                                     register={form.register('area_tematica')}
-                                    label="Área Temática"
+                                    label={<b>Área Temática</b>}
                                     placeholder="Selecione uma opção"
                                     options={options}
                                 />
@@ -107,7 +107,7 @@ const ConsultaASociedade = ({
                             <div className="grid w-full gap-1.5">
                                 <TextareaField
                                     register={form.register('pergunta')}
-                                    label="Pergunta"
+                                    label={<b>Pergunta</b>}
                                     placeholder="Escreva sua pergunta aqui..."
                                 />
                             </div>

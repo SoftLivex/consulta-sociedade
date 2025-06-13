@@ -37,7 +37,9 @@ const Faq = ({
             <div className="container mx-auto">
                 <div className="text-center">
                     <Badge className="text-xs font-medium">{badge}</Badge>
-                    <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
+                    <h1 className="mt-4 text-4xl font-semibold text-primary">
+                        {heading}
+                    </h1>
                 </div>
                 <div className="mx-auto mt-14 max-w-xl">
                     {faqs.map((faq, index) => (

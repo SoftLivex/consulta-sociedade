@@ -35,7 +35,7 @@ export interface SelectFieldProps<TFieldValues extends FieldValues>
     extends SelectProps {
     register: UseFormRegisterReturn<FieldPath<TFieldValues>>;
     options: SelectFieldOption;
-    label?: string;
+    label?: React.ReactNode;
     placeholder?: string;
     description?: string;
     defaultValue?: TFieldValues[FieldPath<TFieldValues>];

@@ -16,7 +16,7 @@ import type {
 export interface TextareaFieldProps<T extends FieldValues>
     extends React.ComponentProps<typeof Textarea> {
     register: UseFormRegisterReturn<FieldPath<T>>;
-    label?: string;
+    label?: React.ReactNode;
     description?: string;
 }
 
@@ -32,7 +32,7 @@ export function TextareaField<T extends FieldValues>({
             render={({ field }) => {
                 return (
                     <FormItem>
-                        <FormLabel className="flex items-center justify-between font-bold">
+                        <FormLabel className="flex items-center justify-between">
                             {label}
                             <FormMessage className="max-sm:hidden text-xs opacity-80" />
                         </FormLabel>
