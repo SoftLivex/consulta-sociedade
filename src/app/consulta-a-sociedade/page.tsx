@@ -6,18 +6,10 @@ import { SubmitButton } from '@/components/ui/shuip/submit-button';
 import { TextareaField } from '@/components/ui/shuip/textarea-field';
 import useFormConsultaSociedades from './hooks';
 
-interface Contact2Props {
-    title?: string;
-    description?: string;
-    phone?: string;
-    email?: string;
-    web?: { label: string; url: string };
-}
-
-const ConsultaASociedade = ({
-    title = 'Prefeitura de Manaus Priorizando a Participação Popular',
-    description = 'A Prefeitura de Manaus quer ouvir você: tire suas dúvidas, participe e ajude a construir uma cidade melhor para todos.',
-}: Contact2Props) => {
+const title = 'Prefeitura de Manaus Priorizando a Participação Popular';
+const description =
+    'A Prefeitura de Manaus quer ouvir você: tire suas dúvidas, participe e ajude a construir uma cidade melhor para todos.';
+const ConsultaASociedade = () => {
     const { form, onSubmit, isPending } = useFormConsultaSociedades();
 
     const options = {
