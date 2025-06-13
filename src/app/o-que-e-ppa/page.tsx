@@ -3,7 +3,7 @@ interface FaqItem {
     answer: string;
 }
 
-interface FaqProps {
+interface Faq5Props {
     heading?: string;
     description?: string;
     faqs?: FaqItem[];
