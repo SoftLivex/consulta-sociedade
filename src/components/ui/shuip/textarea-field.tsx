@@ -32,7 +32,7 @@ export function TextareaField<T extends FieldValues>({
             render={({ field }) => {
                 return (
                     <FormItem>
-                        <FormLabel className="flex items-center justify-between">
+                        <FormLabel className="flex items-center justify-between font-bold">
                             {label}
                             <FormMessage className="max-sm:hidden text-xs opacity-80" />
                         </FormLabel>

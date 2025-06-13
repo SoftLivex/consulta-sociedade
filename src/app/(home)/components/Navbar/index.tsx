@@ -66,18 +66,26 @@ const Navbar = ({
             <div className="container">
                 {/* Desktop Menu */}
                 <nav className="hidden justify-between lg:flex">
-                    <Link href={logo.url} className="flex items-center gap-0">
+                    <Link href={logo.url} className="flex items-center gap-6">
+                        <span className="flex flex-row gap-0">
+                            <img
+                                src={logo.src}
+                                className="max-h-8 w-full"
+                                alt={logo.alt}
+                            />
+                            <img
+                                src={logo.title}
+                                className="max-h-8 w-full"
+                                alt={logo.alt}
+                            />
+                        </span>
                         <img
-                            src={logo.src}
-                            className="max-h-8 w-full"
-                            alt={logo.alt}
-                        />
-                        <img
-                            src={logo.title}
-                            className="max-h-8 w-full"
+                            src={'/prefeitura.png'}
+                            className="max-h-8 w-auto"
                             alt={logo.alt}
                         />
                     </Link>
+
                     <div className="flex items-center">
                         <NavigationMenu>
                             <NavigationMenuList>
@@ -98,11 +106,16 @@ const Navbar = ({
                         {/* Logo */}
                         <Link
                             href={logo.url}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-4"
                         >
                             <img
                                 src={logo.src}
                                 className="max-h-8"
+                                alt={logo.alt}
+                            />
+                            <img
+                                src={'/prefeitura-logo.png'}
+                                className="max-h-8 w-full"
                                 alt={logo.alt}
                             />
                         </Link>
