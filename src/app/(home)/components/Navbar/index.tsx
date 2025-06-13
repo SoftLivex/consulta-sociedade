@@ -13,6 +13,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
+import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
 
@@ -68,18 +69,18 @@ const Navbar = ({
                 <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
-                            <img
+                            <Image
                                 src={logo.src}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
                             />
-                            <img
+                            <Image
                                 src={logo.title}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
                             />
                         </span>
-                        <img
+                        <Image
                             src={'/prefeitura.png'}
                             className="max-h-8 w-auto"
                             alt={logo.alt}
@@ -108,12 +109,12 @@ const Navbar = ({
                             href={logo.url}
                             className="flex items-center gap-4"
                         >
-                            <img
+                            <Image
                                 src={logo.src}
                                 className="max-h-8"
                                 alt={logo.alt}
                             />
-                            <img
+                            <Image
                                 src={'/prefeitura-logo.png'}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
@@ -132,7 +133,7 @@ const Navbar = ({
                                             href={logo.url}
                                             className="flex items-center gap-2"
                                         >
-                                            <img
+                                            <Image
                                                 src={logo.src}
                                                 className="max-h-8"
                                                 alt={logo.alt}

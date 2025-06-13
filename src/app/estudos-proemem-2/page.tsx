@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export interface FaqItem {
     question: string;
     answer: string;
@@ -87,7 +89,7 @@ const EstudosProemem = () => {
                         </section>
                     </div>
                     <div className="hidden lg:flex">
-                        <img
+                        <Image
                             src={'/faq/devolutiva.png'}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
