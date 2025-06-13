@@ -1,5 +1,3 @@
-import { Badge } from '@/components/ui/badge';
-
 export interface FaqItem {
     question: string;
     answer: string;
@@ -33,7 +31,6 @@ const defaultFaqs: FaqItem[] = [
 ];
 
 const Faq = ({
-    badge = 'Perguntas Frequentes',
     heading = 'O que é Consulta Pública?',
     faqs = defaultFaqs,
 }: Faq5Props) => {
@@ -41,7 +38,6 @@ const Faq = ({
         <section className="py-16">
             <div className="container mx-auto">
                 <div className="text-center">
-                    <Badge className="text-xs font-medium">{badge}</Badge>
                     <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
                 </div>
                 <div className="mx-auto mt-14 max-w-xl">

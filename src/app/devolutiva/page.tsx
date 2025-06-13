@@ -1,5 +1,3 @@
-import { Badge } from '@/components/ui/badge';
-
 export interface FaqItem {
     question: string;
     answer: string;
@@ -12,13 +10,10 @@ export interface Faq5Props {
     faqs?: FaqItem[];
 }
 
-const ComoParticipar = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
+const ComoParticipar = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
             <div className="container mx-auto flex-1 flex flex-col">
-                <div className="text-center mb-14 ">
-                    <Badge className="text-xs font-medium">{badge}</Badge>
-                </div>
                 <div className="flex grid-cols-2 lg:grid gap-16  max-w-6xl self-center container flex-1">
                     <div className="flex flex-col gap-6">
                         <h1 className="mt-4 text-6xl font-bold text-primary">
