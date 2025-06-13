@@ -1,6 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 export interface FaqItem {
     question: string;
@@ -14,45 +12,37 @@ export interface Faq5Props {
     faqs?: FaqItem[];
 }
 
-const ComoParticipar = ({
-    badge = 'Perguntas Frequentes',
-    heading = 'O que é a Devolutiva?',
-}: Faq5Props) => {
+const ComoParticipar = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
     return (
-        <section className="py-16">
-            <div className="container mx-auto">
-                <div className="text-center">
+        <section className="py-16 px-8 flex flex-col  flex-1">
+            <div className="container mx-auto flex-1 flex flex-col">
+                <div className="text-center mb-14 ">
                     <Badge className="text-xs font-medium">{badge}</Badge>
-                    <h1 className="mt-4 text-4xl font-semibold text-primary">
-                        {heading}
-                    </h1>
                 </div>
-                <div className="mx-auto mt-14 max-w-xl">
-                    <div className="mb-8 flex gap-4">
-                        <div>
-                            <div className="mb-2 flex flex-col">
-                                <h3 className="font-medium">
-                                    As consultas públicas serão transmitidas ao
-                                    vivo através das páginas:
-                                </h3>
-                                <Button variant="link" size="sm" asChild>
-                                    <Link href="/consulta-a-sociedade">
-                                        Consulta à Sociedade
-                                    </Link>
-                                </Button>
-                            </div>
-                            <p className="text-sm text-muted-foreground">
-                                O cidadão interessado em contribuir na
-                                elaboração dos projetos inseridos no Projeto de
-                                Expansão e Melhoria Educacional da Rede Pública
-                                Municipal de Manaus – PROEMEM II, deverá
-                                utilizar a opção do menu PARTICIPE. Após sua
-                                identificação, ele deverá selecionar sua área de
-                                interesse, marcando suas prioridades e, caso
-                                tenha uma que não conste na lista, utilizar o
-                                espaço para nova sugestão.
-                            </p>
-                        </div>
+                <div className="flex grid-cols-2 lg:grid gap-16  max-w-6xl self-center container flex-1">
+                    <div className="flex flex-col gap-6">
+                        <h1 className="mt-4 text-6xl font-bold text-primary">
+                            O que é a Devolutiva?
+                        </h1>
+                        <p className="leading-relaxed text-justify">
+                            É o retorno à sociedade sobre os resultados das
+                            Consultas Públicas relacionadas às ações
+                            socioambientais do Projeto de Expansão e Melhoria
+                            Educacional da Rede Pública Municipal de Manaus –
+                            PROEMEM II.
+                        </p>
+                        <p className="leading-relaxed text font-bold text-justify">
+                            O Relatório Final da Devolutiva respondendo
+                            eventuais questionamentos estará disponível no dia
+                            14 de julho de 2025.
+                        </p>
+                    </div>
+                    <div className="hidden lg:flex">
+                        <img
+                            src={'/faq/devolutiva.png'}
+                            className="h-full w-full object-contain"
+                            alt={'devolutiva'}
+                        />
                     </div>
                 </div>
             </div>

@@ -65,7 +65,7 @@ const Navbar = ({
         <section className="py-4 flex flex-col items-center border-b border-border sticky top-0 z-50 bg-sidebar backdrop-blur-2xl">
             <div className="container">
                 {/* Desktop Menu */}
-                <nav className="hidden justify-between lg:flex">
+                <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
                             <img
@@ -101,7 +101,7 @@ const Navbar = ({
                 </nav>
 
                 {/* Mobile Menu */}
-                <div className="block lg:hidden">
+                <div className="block xl:hidden">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <Link
