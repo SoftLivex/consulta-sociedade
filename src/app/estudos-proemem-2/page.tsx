@@ -1,6 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 export interface FaqItem {
     question: string;
@@ -14,64 +12,91 @@ export interface Faq5Props {
     faqs?: FaqItem[];
 }
 
-const defaultFaqs: FaqItem[] = [
-    {
-        question: 'O que é Consulta Pública?',
-        answer: 'A consulta pública é uma ferramenta essencial de diálogo entre a administração pública e a sociedade. Ela tem como objetivo estabelecer um canal aberto e participativo com as comunidades diretamente afetadas ou beneficiadas pelas obras do PROEMEM II, promovendo a troca de informações com a Prefeitura de Manaus e as equipes responsáveis pela execução do Programa. Esse processo fortalece a transparência e a participação cidadã.',
-    },
-    {
-        question: 'A importância das consultas públicas?',
-        answer: 'A realização desta consulta é fundamental para que a população participe ativamente do PROEMEM II, um programa que visa ampliar e melhorar a infraestrutura educacional da rede municipal de ensino, com foco em sustentabilidade, inclusão e inovação pedagógica. O envolvimento da comunidade permite identificar necessidades específicas, esclarecer dúvidas sobre as obras, propor melhorias e garantir que o Projeto atenda efetivamente às expectativas locais, respeitando aspectos culturais, ambientais e sociais.',
-    },
-    {
-        question: 'Qual o papel da população na consulta pública?',
-        answer: 'A população tem um papel ativo e decisivo na construção de um Projeto mais justo e eficaz. Participar da consulta é uma forma de exercer o direito à informação e de contribuir para o aperfeiçoamento das ações do PROEMEM II. As opiniões, dúvidas, críticas e sugestões coletadas servem como base para ajustes nas obras, nas ações socioambientais e nos mecanismos de comunicação com a comunidade.',
-    },
-    {
-        question:
-            'O que é o Programa de Expansão e Melhoria Educacional (PROEMEM II)?',
-        answer: 'O PROEMEM II é um programa da Prefeitura de Manaus, financiado pelo Banco Interamericano de Desenvolvimento (BID), que tem como objetivo melhorar o acesso e a qualidade da Educação Básica no município. Ele inclui a construção, ampliação e modernização de escolas e creches, instalação de sistemas de saneamento, energia solar, acessibilidade, conectividade e segurança, além de ações pedagógicas e de gestão escolar. As intervenções estão concentradas especialmente em áreas de alta vulnerabilidade social, urbana e ribeirinha, impactando diretamente milhares de estudantes, professores e famílias.',
-    },
-];
-
-const ComoParticipar = ({
-    badge = 'Perguntas Frequentes',
-    heading = 'Como Participar?',
-    faqs = defaultFaqs,
-}: Faq5Props) => {
+const ComoParticipar = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
     return (
-        <section className="py-16">
-            <div className="container mx-auto">
-                <div className="text-center">
+        <section className="py-16 px-8 flex flex-col  flex-1">
+            <div className="container mx-auto flex-1 flex flex-col">
+                <div className="text-center mb-14 ">
                     <Badge className="text-xs font-medium">{badge}</Badge>
-                    <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
                 </div>
-                <div className="mx-auto mt-14 max-w-xl">
-                    <div className="mb-8 flex gap-4">
-                        <div>
-                            <div className="mb-2 flex flex-col">
-                                <h3 className="font-medium">
-                                    As consultas públicas serão transmitidas ao
-                                    vivo através das páginas:
-                                </h3>
-                                <Button variant="link" size="sm" asChild>
-                                    <Link href="/consulta-a-sociedade">
-                                        Consulta à Sociedade
-                                    </Link>
-                                </Button>
-                            </div>
-                            <p className="text-sm text-muted-foreground">
-                                O cidadão interessado em contribuir na
-                                elaboração dos projetos inseridos no Projeto de
-                                Expansão e Melhoria Educacional da Rede Pública
-                                Municipal de Manaus – PROEMEM II, deverá
-                                utilizar a opção do menu PARTICIPE. Após sua
-                                identificação, ele deverá selecionar sua área de
-                                interesse, marcando suas prioridades e, caso
-                                tenha uma que não conste na lista, utilizar o
-                                espaço para nova sugestão.
+                <div className="flex grid-cols-2 lg:grid gap-16  max-w-6xl self-center container flex-1">
+                    <div className="flex flex-col gap-6">
+                        <h1 className="mt-4 text-6xl font-bold text-primary">
+                            Estudos PROEMEM II
+                        </h1>
+                        <section className="space-y-2 *:leading-relaxed *:not-even:text-justify">
+                            <p>
+                                Os estudos e documentos apresentados serão
+                                divulgados durante as Consultas Públicas do
+                                PROEMEM II, com intuito informar a sociedade e
+                                dar mais transparência sobre as etapas do novo
+                                Projeto de Expansão e Melhoria Educacional da
+                                Rede Pública Municipal de Manaus. A Avaliação
+                                Ambiental e Social - AAS, demonstra que o
+                                PROEMEM II é viável ambiental e socialmente,
+                                desde que sejam adotadas as medidas previstas no
+                                PGAS. O projeto contribui para o desenvolvimento
+                                sustentável de Manaus, promovendo educação de
+                                qualidade, inclusão social e respeito ao meio
+                                ambiente.
                             </p>
-                        </div>
+                            <p>
+                                A AAS está estruturada em blocos temáticos que
+                                contemplam a descrição do programa, o marco
+                                legal e institucional, as condições ambientais e
+                                sociais do município de Manaus, as
+                                características das obras e seus potenciais
+                                impactos. Dessa forma, o documento fornece as
+                                bases técnicas e legais para garantir que a
+                                execução do PROEMEM II ocorra de forma
+                                planejada, segura e compatível com os princípios
+                                da sustentabilidade ambiental, da justiça social
+                                e da boa governança pública.
+                            </p>
+                            <p>
+                                O Plano de Gestão Ambiental e Social (PGAS) é um
+                                instrumento técnico e operacional que integra o
+                                conjunto de documentos exigidos para o
+                                planejamento e execução do PROEMEM II, programa
+                                financiado parcialmente pelo Banco
+                                Interamericano de Desenvolvimento (BID). O PGAS
+                                se baseia na Avaliação Ambiental e Social (AAS)
+                                e está estruturado conforme os Padrões de
+                                Desempenho Ambiental e Social (PDAS) definidos
+                                pelo Marco de Políticas Ambientais e Sociais
+                                (MPAS) do BID.
+                            </p>
+                            <p>
+                                Este documento tem como objetivo principal
+                                garantir que todas as atividades, obras e
+                                intervenções físicas previstas no PROEMEM II
+                                sejam desenvolvidas em conformidade com a
+                                legislação ambiental brasileira, os regulamentos
+                                municipais e os Padrões de Desempenho Ambiental
+                                e Social (PDAS) definidos pelo Marco de
+                                Políticas Ambientais e Sociais (MPAS) do BID.
+                            </p>
+                            <p>
+                                O objetivo geral do PGAS é assegurar que as
+                                obras e intervenções do PROEMEM II sejam
+                                executadas de maneira ambientalmente responsável
+                                e socialmente sustentável, conforme a legislação
+                                brasileira e os requisitos internacionais do
+                                BID. O plano tem por finalidade prevenir,
+                                mitigar, controlar e, quando necessário,
+                                compensar os impactos ambientais e sociais
+                                decorrentes da execução das obras e ações do
+                                programa, especialmente nas fases de implantação
+                                e operação da infraestrutura educacional.
+                            </p>
+                        </section>
+                    </div>
+                    <div className="hidden lg:flex">
+                        <img
+                            src={'/faq/devolutiva.png'}
+                            className="h-full w-full object-contain"
+                            alt={'devolutiva'}
+                        />
                     </div>
                 </div>
             </div>
