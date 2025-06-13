@@ -42,8 +42,8 @@ export const RenderMenuItem = (item: MenuItem) => {
             <NavigationMenuLink
                 href={item.url}
                 data-active={isActive}
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground
-                 data-[active=true]:underline data-[active=true]:decoration-primary
+                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-sidebar text-sidebar-foreground px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground
+                 data-[active=true]:underline data-[active=true]:decoration-secondary
                 "
             >
                 {item.title}
@@ -78,7 +78,7 @@ export const RenderMobileMenuItem = (item: MenuItem) => {
         <Link
             key={item.title}
             href={item.url}
-            className="text-md font-semibold data-[active=true]:underline data-[active=true]:decoration-primary"
+            className="text-md font-semibold data-[active=true]:underline data-[active=true]:decoration-secondary"
             data-active={isActive}
         >
             {item.title}

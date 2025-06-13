@@ -62,7 +62,7 @@ const Navbar = ({
     menu = menuDefault,
 }: Navbar1Props) => {
     return (
-        <section className="py-4 flex flex-col items-center border-b border-border sticky top-0 z-50 bg-background/60 backdrop-blur-2xl">
+        <section className="py-4 flex flex-col items-center border-b border-border sticky top-0 z-50 bg-sidebar backdrop-blur-2xl">
             <div className="container">
                 {/* Desktop Menu */}
                 <nav className="hidden justify-between lg:flex">
@@ -134,7 +134,10 @@ const Navbar = ({
                                         className="flex w-full flex-col gap-4"
                                     >
                                         {menu.map((item) => (
-                                            <RenderMobileMenuItem {...item} />
+                                            <RenderMobileMenuItem
+                                                key={item.title}
+                                                {...item}
+                                            />
                                         ))}
                                     </Accordion>
                                 </div>
