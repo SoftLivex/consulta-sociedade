@@ -34,9 +34,9 @@ const ConsultaASociedade = ({
 
     return (
         <section>
-            <div className="w-full p-8 bg-gradient-to-l from-accent to-secondary">
-                <div className="text-center lg:text-left text-secondary-foreground flex flex-col justify-center items-center gap-4">
-                    <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
+            <div className="w-full px-8 py-16 bg-gradient-to-l from-accent to-secondary">
+                <div className="text-center lg:text-left text-secondary-foreground flex flex-col justify-center items-center gap-2">
+                    <h1 className="mb-2 text-3xl font-semibold lg:mb-1 lg:text-5xl">
                         {title}
                     </h1>
                     <p>{description}</p>

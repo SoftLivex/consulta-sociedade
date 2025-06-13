@@ -49,7 +49,6 @@ const menuDefault: Navbar1Props['menu'] = [
     { title: 'Participe', url: '/consulta-a-sociedade' },
     { title: 'Devolutiva', url: '/devolutiva' },
     { title: 'Estudos PROEMEM II', url: '/estudos-proemem-2' },
-    { title: 'Dúvidas', url: '/duvidas' },
 ];
 
 const Navbar = ({

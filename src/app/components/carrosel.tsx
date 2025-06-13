@@ -38,7 +38,7 @@ export default function CarouselDemo() {
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             }}
-            effect="cube"
+            // effect="cube"
             loop={true}
             modules={[Autoplay, Pagination, Navigation, EffectFade, EffectCube]}
             className="relative rounded-4xl [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background max-h-[80dvh] h-fit"
