@@ -1,13 +1,14 @@
 "use client";
 // components/Navigation.tsx
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Ham, Hamburger, Menu } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: "Principal", href: "/" },
     { name: "O que é Consulta Pública", href: "/o-que-e-ppa" },
     { name: "Como Participar", href: "/como-participar" },
     { name: "Participe", href: "/consulta-a-sociedade" },
@@ -17,30 +18,27 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="mt-4">
-      <button
-        className="md:hidden text-blue-800"
+    <Fragment>
+      <Button
+        className="lg:hidden text-blue-800"
         onClick={() => setIsOpen(!isOpen)}
       >
-        Menu
-      </button>
+        <Menu />
+      </Button>
       <ul
-        className={`md:flex md:space-x-6 ${
+        className={`lg:flex lg:space-x-6 ${
           isOpen ? "block" : "hidden"
-        } mt-2 md:mt-0`}
+        } mt-2 lg:mt-0`}
       >
         {menuItems.map((item) => (
           <li key={item.name}>
-            <Link
-              href={item.href}
-              className="text-gray-700 hover:text-blue-800"
-            >
-              {item.name}
-            </Link>
+            <Button variant="link" size="sm">
+              <Link href={item.href}>{item.name}</Link>
+            </Button>
           </li>
         ))}
       </ul>
-    </nav>
+    </Fragment>
   );
 };
 

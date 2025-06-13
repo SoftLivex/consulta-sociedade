@@ -16,30 +16,29 @@ const defaultFaqs: FaqItem[] = [
   {
     question: "O que é Consulta Pública?",
     answer:
-      "A consulta é uma ferramenta que possibilita o diálogo entre a administração pública e a sociedade. Tem como objetivo estabelecer um canal de comunicação junto às comunidades diretamente beneficiadas com as obras, construindo um processo de troca de informações com as equipes do Governo envolvidas nos projetos.",
+      "A consulta pública é uma ferramenta essencial de diálogo entre a administração pública e a sociedade. Ela tem como objetivo estabelecer um canal aberto e participativo com as comunidades diretamente afetadas ou beneficiadas pelas obras do PROEMEM II, promovendo a troca de informações com a Prefeitura de Manaus e as equipes responsáveis pela execução do Programa. Esse processo fortalece a transparência e a participação cidadã.",
   },
   {
     question: "A importância das consultas públicas?",
     answer:
-      "A realização dessa consulta é importante para que a comunidade participe do Prosai Parintins, uma vez que é beneficiária direta das obras e do processo de reassentamento. O conhecimento de quem faz uso diário da área é fundamental para consolidar propostas que atendam de forma eficaz a necessidade da população.",
+      "A realização desta consulta é fundamental para que a população participe ativamente do PROEMEM II, um programa que visa ampliar e melhorar a infraestrutura educacional da rede municipal de ensino, com foco em sustentabilidade, inclusão e inovação pedagógica. O envolvimento da comunidade permite identificar necessidades específicas, esclarecer dúvidas sobre as obras, propor melhorias e garantir que o Projeto atenda efetivamente às expectativas locais, respeitando aspectos culturais, ambientais e sociais.",
   },
   {
     question: "Qual o papel da população na consulta pública?",
     answer:
-      "O papel da população é participar nas questões de interesse coletivo, ampliando a discussão, nesse caso, sobre o Prosai Parintins. Além disso, para embasar as decisões sobre formulação e definição dos seus projetos e dos reassentamentos. Ao dar sua opinião, a população ajuda a gestão pública na condução de ações ainda mais assertivas.",
+      "A população tem um papel ativo e decisivo na construção de um Projeto mais justo e eficaz. Participar da consulta é uma forma de exercer o direito à informação e de contribuir para o aperfeiçoamento das ações do PROEMEM II. As opiniões, dúvidas, críticas e sugestões coletadas servem como base para ajustes nas obras, nas ações socioambientais e nos mecanismos de comunicação com a comunidade.",
   },
   {
     question:
-      "O que é o Programa de Saneamento Integrado (Prosai) de Parintins?",
+      "O que é o Programa de Expansão e Melhoria Educacional (PROEMEM II)?",
     answer:
-      "O Prosai Parintins é um programa de múltiplas obras, executado pelo Governo do Amazonas, com financiamento do Banco Interamericano de Desenvolvimento (BID). A área de intervenção é de 119 mil metros quadrados, alcançando os bairros da Francesa, Palmares, Santa Clara, Rita de Cássia e Centro. O objetivo é solucionar problemas ambientais, urbanísticos e sociais das áreas de abrangência e de suas redondezas, incluindo as famílias que sofrem com alagações.",
+      "O PROEMEM II é um programa da Prefeitura de Manaus, financiado pelo Banco Interamericano de Desenvolvimento (BID), que tem como objetivo melhorar o acesso e a qualidade da Educação Básica no município. Ele inclui a construção, ampliação e modernização de escolas e creches, instalação de sistemas de saneamento, energia solar, acessibilidade, conectividade e segurança, além de ações pedagógicas e de gestão escolar. As intervenções estão concentradas especialmente em áreas de alta vulnerabilidade social, urbana e ribeirinha, impactando diretamente milhares de estudantes, professores e famílias.",
   },
 ];
 
-const Faq5 = ({
-  badge = "FAQ",
-  heading = "Common Questions & Answers",
-  description = "Find out all the essential details about our platform and how it can serve your needs.",
+const Faq = ({
+  badge = "Perguntas Frequentes",
+  heading = "O que é Consulta Pública?",
   faqs = defaultFaqs,
 }: Faq5Props) => {
   return (
@@ -48,9 +47,6 @@ const Faq5 = ({
         <div className="text-center">
           <Badge className="text-xs font-medium">{badge}</Badge>
           <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
-          <p className="mt-6 font-medium text-muted-foreground">
-            {description}
-          </p>
         </div>
         <div className="mx-auto mt-14 max-w-xl">
           {faqs.map((faq, index) => (
@@ -72,4 +68,4 @@ const Faq5 = ({
   );
 };
 
-export default Faq5;
+export default Faq;
