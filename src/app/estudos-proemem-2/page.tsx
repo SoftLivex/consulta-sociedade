@@ -1,17 +1,5 @@
 import Image from 'next/image';
 
-export interface FaqItem {
-    question: string;
-    answer: string;
-}
-
-export interface Faq5Props {
-    badge?: string;
-    heading?: string;
-    description?: string;
-    faqs?: FaqItem[];
-}
-
 const EstudosProemem = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
