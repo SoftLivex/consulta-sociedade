@@ -15,8 +15,8 @@ interface Contact2Props {
 }
 
 const ConsultaASociedade = ({
-    title = 'Consulta à Sociedade',
-    description = 'Prefeitura de Manaus Priorizando a Participação Popular',
+    title = 'Prefeitura de Manaus Priorizando a Participação Popular',
+    description = 'A Prefeitura de Manaus quer ouvir você: tire suas dúvidas, participe e ajude a construir uma cidade melhor para todos.',
 }: Contact2Props) => {
     const { form, onSubmit, isPending } = useFormConsultaSociedades();
 
@@ -33,49 +33,17 @@ const ConsultaASociedade = ({
     };
 
     return (
-        <section className="py-16">
-            <div className="container mx-auto">
-                <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
-                    <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
-                        <div className="text-center lg:text-left">
-                            <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
-                                {title}
-                            </h1>
-                            <p className="text-muted-foreground">
-                                {description}
-                            </p>
-                        </div>
-                        {/* <div className="mx-auto w-fit lg:mx-0">
-                            <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">
-                                Contact Details
-                            </h3>
-                            <ul className="ml-4 list-disc">
-                                <li>
-                                    <span className="font-bold">Phone: </span>
-                                    {phone}
-                                </li>
-                                <li>
-                                    <span className="font-bold">Email: </span>
-                                    <a
-                                        href={`mailto:${email}`}
-                                        className="underline"
-                                    >
-                                        {email}
-                                    </a>
-                                </li>
-                                <li>
-                                    <span className="font-bold">Web: </span>
-                                    <a
-                                        href={web.url}
-                                        target="_blank"
-                                        className="underline"
-                                    >
-                                        {web.label}
-                                    </a>
-                                </li>
-                            </ul>
-                        </div> */}
-                    </div>
+        <section>
+            <div className="w-full p-8 bg-gradient-to-l from-accent to-secondary">
+                <div className="text-center lg:text-left text-secondary-foreground flex flex-col justify-center items-center gap-4">
+                    <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
+                        {title}
+                    </h1>
+                    <p>{description}</p>
+                </div>
+            </div>
+            <div className="container mx-auto py-16">
+                <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 lg:gap-20">
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
