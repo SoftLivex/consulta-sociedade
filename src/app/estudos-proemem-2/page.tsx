@@ -12,7 +12,7 @@ export interface Faq5Props {
     faqs?: FaqItem[];
 }
 
-const ComoParticipar = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
+const EstudosProemem = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
             <div className="container mx-auto flex-1 flex flex-col">
@@ -104,4 +104,4 @@ const ComoParticipar = ({ badge = 'Perguntas Frequentes' }: Faq5Props) => {
     );
 };
 
-export default ComoParticipar;
+export default EstudosProemem;
