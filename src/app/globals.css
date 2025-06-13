@@ -163,4 +163,10 @@ body {
 
 .swiper-pagination-bullet-active {
   background: var(--color-primary) !important;
+  width: 2rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 1.5rem !important;
+  border-radius: .5rem !important;
 }
