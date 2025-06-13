@@ -186,8 +186,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
 }

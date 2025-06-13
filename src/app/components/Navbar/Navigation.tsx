@@ -11,6 +11,7 @@ import {
     NavigationMenuLink,
     NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MenuItem } from '.';
 
@@ -42,7 +43,7 @@ export const RenderMenuItem = (item: MenuItem) => {
                 href={item.url}
                 data-active={isActive}
                 className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground
-                 data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:text-primary
+                 data-[active=true]:underline data-[active=true]:decoration-primary
                 "
             >
                 {item.title}
@@ -74,20 +75,20 @@ export const RenderMobileMenuItem = (item: MenuItem) => {
     }
 
     return (
-        <a
+        <Link
             key={item.title}
             href={item.url}
-            className="text-md font-semibold data-[active=true]:border-b-2 data-[active=true]:border-primary data-[active=true]:text-primary"
+            className="text-md font-semibold data-[active=true]:underline data-[active=true]:decoration-primary"
             data-active={isActive}
         >
             {item.title}
-        </a>
+        </Link>
     );
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
     return (
-        <a
+        <Link
             className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
             href={item.url}
         >
@@ -100,6 +101,6 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
                     </p>
                 )}
             </div>
-        </a>
+        </Link>
     );
 };

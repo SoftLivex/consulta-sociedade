@@ -13,6 +13,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
+import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
 
 export interface MenuItem {
@@ -47,16 +48,16 @@ const menuDefault: Navbar1Props['menu'] = [
     { title: 'Como Participar', url: '/como-participar' },
     { title: 'Participe', url: '/consulta-a-sociedade' },
     { title: 'Devolutiva', url: '/devolutiva' },
-    { title: 'Estudos Prosai Parintins', url: '/estudos-prosai-parintins' },
+    { title: 'Estudos PROEMEM II', url: '/estudos-proemem-2' },
     { title: 'Dúvidas', url: '/duvidas' },
 ];
 
 const Navbar = ({
     logo = {
-        url: 'https://www.shadcnblocks.com',
-        src: 'https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg',
+        url: '/',
+        src: '/Logo.svg',
         alt: 'logo',
-        title: 'Shadcnblocks.com',
+        title: '/Title.svg',
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -65,16 +66,18 @@ const Navbar = ({
             <div className="container">
                 {/* Desktop Menu */}
                 <nav className="hidden justify-between lg:flex">
-                    <a href={logo.url} className="flex items-center gap-2">
+                    <Link href={logo.url} className="flex items-center gap-0">
                         <img
                             src={logo.src}
-                            className="max-h-8"
+                            className="max-h-8 w-full"
                             alt={logo.alt}
                         />
-                        <span className="text-lg font-semibold tracking-tighter">
-                            {logo.title}
-                        </span>
-                    </a>
+                        <img
+                            src={logo.title}
+                            className="max-h-8 w-full"
+                            alt={logo.alt}
+                        />
+                    </Link>
                     <div className="flex items-center">
                         <NavigationMenu>
                             <NavigationMenuList>
@@ -93,13 +96,16 @@ const Navbar = ({
                 <div className="block lg:hidden">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <a href={logo.url} className="flex items-center gap-2">
+                        <Link
+                            href={logo.url}
+                            className="flex items-center gap-2"
+                        >
                             <img
                                 src={logo.src}
                                 className="max-h-8"
                                 alt={logo.alt}
                             />
-                        </a>
+                        </Link>
                         <Sheet>
                             <SheetTrigger asChild>
                                 <Button variant="outline" size="icon">
@@ -109,7 +115,7 @@ const Navbar = ({
                             <SheetContent className="overflow-y-auto">
                                 <SheetHeader>
                                     <SheetTitle>
-                                        <a
+                                        <Link
                                             href={logo.url}
                                             className="flex items-center gap-2"
                                         >
@@ -118,7 +124,7 @@ const Navbar = ({
                                                 className="max-h-8"
                                                 alt={logo.alt}
                                             />
-                                        </a>
+                                        </Link>
                                     </SheetTitle>
                                 </SheetHeader>
                                 <div className="flex flex-col gap-6 p-4">
