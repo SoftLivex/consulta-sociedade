@@ -1,3 +1,6 @@
 export const getImage = (url: string) => {
-    return `${url}`;
+    // is dev
+    const prefix = process.env.NODE_ENV === 'development' ? '' : '.';
+
+    return `${prefix}${url}`;
 };
