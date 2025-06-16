@@ -44,18 +44,17 @@ export default function CarouselDemo() {
             modules={[Autoplay, Pagination, Navigation, EffectFade, EffectCube]}
             className="relative rounded-4xl [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background max-h-[80dvh] h-fit"
         >
-            {[
-                require('./banner/banner-1.png'),
-                require('./banner/banner-2.png'),
-            ].map((img, index) => (
-                <SwiperSlide key={index} className="select-none relative">
-                    <Image
-                        src={img}
-                        alt={`banner-${index}`}
-                        className="h-full w-full object-cover"
-                    />
-                </SwiperSlide>
-            ))}
+            {['./banner/banner-1.png', './banner/banner-2.png'].map(
+                (img, index) => (
+                    <SwiperSlide key={index} className="select-none relative">
+                        <Image
+                            src={img}
+                            alt={`banner-${index}`}
+                            className="h-full w-full object-cover"
+                        />
+                    </SwiperSlide>
+                ),
+            )}
         </Swiper>
     );
 }
