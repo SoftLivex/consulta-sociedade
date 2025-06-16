@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [new URL("https://apstatic.prodam.am.gov.br/images/**/**")],
-  },
+    output: 'export',
+    basePath: process.env.PAGES_BASE_PATH,
 };
 
 export default nextConfig;
