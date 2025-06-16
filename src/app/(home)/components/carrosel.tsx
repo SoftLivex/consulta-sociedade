@@ -44,7 +44,7 @@ export default function CarouselDemo() {
             modules={[Autoplay, Pagination, Navigation, EffectFade, EffectCube]}
             className="relative rounded-4xl [&_div.swiper-button-next]:text-background [&_div.swiper-button-prev]:text-background max-h-[80dvh] h-fit"
         >
-            {['./banner/banner-1.png', './banner/banner-2.png'].map(
+            {['/banner/banner-1.png', '/banner/banner-2.png'].map(
                 (img, index) => (
                     <SwiperSlide key={index} className="select-none relative">
                         <Image

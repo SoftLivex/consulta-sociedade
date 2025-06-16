@@ -2,22 +2,22 @@ import Image from 'next/image';
 
 const faqs = [
     {
-        icon: './faq/participe.png',
+        icon: '/faq/participe.png',
         question: 'Acesse o menu PARTICIPE',
         answer: 'O cidadão interessado deve iniciar o processo clicando na opção "PARTICIPE" no menu principal do site.',
     },
     {
-        icon: './faq/id-card.png',
+        icon: '/faq/id-card.png',
         question: 'Faça sua identificação',
         answer: 'Informe seus dados para que a gente possa reconhecer sua participação e garantir que sua contribuição seja considerada.',
     },
     {
-        icon: './faq/area-interesse.png',
+        icon: '/faq/area-interesse.png',
         question: 'Escolha sua área de interesse',
         answer: 'Marque as prioridades entre as opções disponíveis.',
     },
     {
-        icon: './faq/sugestao.png',
+        icon: '/faq/sugestao.png',
         question: 'Envie sugestões',
         answer: 'Caso tenha uma sugestão de área que não esteja na lista, utilize o campo PERGUNTA para escrevê-la.',
     },

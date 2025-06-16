@@ -78,7 +78,7 @@ const EstudosProemem = () => {
                     </div>
                     <div className="hidden lg:flex">
                         <Image
-                            src={'./faq/estudo.png'}
+                            src={'/faq/estudo.png'}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
                         />
