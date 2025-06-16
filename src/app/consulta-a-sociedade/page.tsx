@@ -38,7 +38,10 @@ const ConsultaASociedade = () => {
             <div className="container mx-auto py-16 px-8">
                 <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 lg:gap-20">
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)}>
+                        <form
+                            onSubmit={form.handleSubmit(onSubmit)}
+                            className="flex flex-col"
+                        >
                             <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-lg w-full pb-6">
                                 <div className="flex flex-col gap-6 rounded-lg w-full">
                                     <div className="grid w-full items-center gap-1.5">
@@ -115,7 +118,7 @@ const ConsultaASociedade = () => {
                             </div>
 
                             <SubmitButton
-                                className="w-full"
+                                className="mx-auto w-full lg:w-auto"
                                 loading={isPending}
                             >
                                 Enviar

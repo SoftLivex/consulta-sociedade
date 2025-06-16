@@ -80,8 +80,7 @@ const Navbar = ({
                                 src={logo.title}
                                 className="max-h-5 w-full"
                                 alt={logo.alt}
-                                width="100"
-                                height="32"
+                                fill
                             />
                         </span>
                         <Image
@@ -119,15 +118,13 @@ const Navbar = ({
                                 src={logo.title}
                                 className="max-h-5 w-fit"
                                 alt={logo.alt}
-                                width="100"
-                                height="32"
+                                fill
                             />
                             <Image
                                 src={getImage('/bid.svg')}
                                 alt={`semed`}
                                 className="max-h-6 w-fit object-cover"
-                                width="100"
-                                height="32"
+                                fill
                             />
                         </Link>
                         <Sheet>
