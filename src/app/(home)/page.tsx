@@ -15,21 +15,21 @@ export default function Home() {
                 <section className="flex-1 flex flex-col gap-1">
                     <b className="text-lg">
                         O que é o Programa de Expansão e Melhoria Educacional
-                        (PROEMEM)?
+                        (PROEMEM 2.0)?
                     </b>
                     <p className="text-sm text-justify">
-                        O <b>PROEMEM</b> é um programa da Prefeitura de Manaus,
-                        financiado pelo Banco Interamericano de Desenvolvimento
-                        (BID), que tem como objetivo melhorar o acesso e a
-                        qualidade da Educação Básica no município. Ele inclui a
-                        construção, ampliação e modernização de escolas e
-                        creches, instalação de sistemas de saneamento, energia
-                        solar, acessibilidade, conectividade e segurança, além
-                        de ações pedagógicas e de gestão escolar. As
-                        intervenções estão concentradas especialmente em áreas
-                        de alta vulnerabilidade social, urbana e ribeirinha,
-                        impactando diretamente milhares de estudantes,
-                        professores e famílias.
+                        O <b>PROEMEM 2.0</b> é um programa da Prefeitura de
+                        Manaus, financiado pelo Banco Interamericano de
+                        Desenvolvimento (BID), que tem como objetivo melhorar o
+                        acesso e a qualidade da Educação Básica no município.
+                        Ele inclui a construção, ampliação e modernização de
+                        escolas e creches, instalação de sistemas de saneamento,
+                        energia solar, acessibilidade, conectividade e
+                        segurança, além de ações pedagógicas e de gestão
+                        escolar. As intervenções estão concentradas
+                        especialmente em áreas de alta vulnerabilidade social,
+                        urbana e ribeirinha, impactando diretamente milhares de
+                        estudantes, professores e famílias.
                     </p>
                 </section>
             </section>

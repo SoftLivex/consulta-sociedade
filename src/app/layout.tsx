@@ -5,9 +5,9 @@ import { Navbar } from './(home)/components/Navbar';
 import './globals.css';
 
 export const metadata: Metadata = {
-    title: 'PROEMEM',
+    title: 'PROEMEM 2.0',
     description:
-        'Consulta à Sociedade 2025 - Participe da construção do futuro da educação em Manaus. Sua opinião é fundamental para o PROEMEM.',
+        'Consulta à Sociedade 2025 - Participe da construção do futuro da educação em Manaus. Sua opinião é fundamental para o PROEMEM 2.0.',
     icons: {
         icon: './Logo.svg', // Path relative to the 'public' directory
     },

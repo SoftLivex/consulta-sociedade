@@ -51,13 +51,13 @@ const menuDefault: Navbar1Props['menu'] = [
     { title: 'O que é Consulta Pública', url: './o-que-e-ppa' },
     {
         title: 'Intervenções',
-        url: 'https://geoprocessamento2025.notion.site/PROEMEM-2-Constru-es-e-Amplia-es-140a58fc231080e6bbdfed1dd08aca58',
+        url: 'https://geoprocessamento2025.notion.site/PROEMEM 2.0-2-Constru-es-e-Amplia-es-140a58fc231080e6bbdfed1dd08aca58',
         outside: true,
     },
     { title: 'Como Participar', url: './como-participar' },
     { title: 'Participe', url: './consulta-a-sociedade' },
     { title: 'Devolutiva', url: './devolutiva' },
-    { title: 'Estudos PROEMEM', url: './estudos-proemem-2' },
+    { title: 'Estudos PROEMEM 2.0', url: './estudos-proemem-2' },
 ];
 
 const Navbar = ({

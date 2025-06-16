@@ -39,7 +39,8 @@ const faqs = [
         question: 'Envie perguntas',
         answer: (
             <>
-                Caso tenha opiniões, dúvidas, críticas ou sugestões das áreas temáticas, utilize o campo{' '}
+                Caso tenha opiniões, dúvidas, críticas ou sugestões das áreas
+                temáticas, utilize o campo{' '}
                 <Button variant="link" size="sm" className="p-0" asChild>
                     <Link href="/consulta-a-sociedade">
                         &quot;PERGUNTA&quot;
@@ -91,8 +92,8 @@ const ComoParticipar = () => {
             </div>
             <p className="mx-auto max-w-2xl text-center">
                 Sua opinião pode transformar a educação! Participe do{' '}
-                <b>PROEMEM</b> e contribua com sugestões para os novos projetos
-                da rede pública municipal.
+                <b>PROEMEM 2.0</b> e contribua com sugestões para os novos
+                projetos da rede pública municipal.
             </p>
         </section>
     );
