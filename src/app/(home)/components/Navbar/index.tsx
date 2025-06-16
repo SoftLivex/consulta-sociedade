@@ -62,9 +62,9 @@ const menuDefault: Navbar1Props['menu'] = [
 const Navbar = ({
     logo = {
         url: '/',
-        src: '/Logo.svg',
+        src: './Logo.svg',
         alt: 'logo',
-        title: '/Title.svg',
+        title: './Title.svg',
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -84,7 +84,7 @@ const Navbar = ({
                             />
                         </span>
                         <Image
-                            src="/bid.svg"
+                            src="./bid.svg"
                             alt={`semed`}
                             className="max-h-6 w-auto object-cover"
                         />
@@ -118,7 +118,7 @@ const Navbar = ({
                                 alt={logo.alt}
                             />
                             <Image
-                                src="/bid.svg"
+                                src="./bid.svg"
                                 alt={`semed`}
                                 className="max-h-6 w-auto object-cover"
                             />
