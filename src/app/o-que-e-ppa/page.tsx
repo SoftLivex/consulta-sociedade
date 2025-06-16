@@ -41,7 +41,7 @@ const Faq = () => {
                             key={index}
                             className="mb-8 flex flex-row gap-4 border-2 rounded-3xl border-tertiary overflow-hidden"
                         >
-                            <span className="flex shrink-0 items-center justify-center bg-tertiary text-tertiary-foreground text-xs p-8">
+                            <span className="flex shrink-0 items-center justify-center bg-tertiary text-xs p-8">
                                 <Image
                                     src={getImage(faq.icon)}
                                     height={200}
@@ -56,7 +56,7 @@ const Faq = () => {
                                         {faq.question}
                                     </h3>
                                 </div>
-                                <p className="text-foreground text-pretty leading-relaxed text-justify">
+                                <p className="text-pretty leading-relaxed text-justify">
                                     {faq.answer}
                                 </p>
                             </div>

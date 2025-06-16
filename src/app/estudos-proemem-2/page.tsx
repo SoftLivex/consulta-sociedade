@@ -16,9 +16,10 @@ const menuDefault = [
                 condições ambientais e sociais do município de Manaus, as
                 características das obras e seus potenciais impactos. Dessa
                 forma, o documento fornece as bases técnicas e legais para
-                garantir que a execução do PROEMEM II ocorra de forma planejada,
-                segura e compatível com os princípios da sustentabilidade
-                ambiental, da justiça social e da boa governança pública.
+                garantir que a execução do PROEMEM 2.0 ocorra de forma
+                planejada, segura e compatível com os princípios da
+                sustentabilidade ambiental, da justiça social e da boa
+                governança pública.
             </>
         ),
         title: 'AAS',
@@ -29,7 +30,7 @@ const menuDefault = [
             <>
                 O Plano de Gestão Ambiental e Social - PGAS é um instrumento
                 técnico e operacional que integra o conjunto de documentos
-                exigidos para o planejamento e execução do PROEMEM II, programa
+                exigidos para o planejamento e execução do PROEMEM 2.0, programa
                 financiado parcialmente pelo Banco Interamericano de
                 Desenvolvimento (BID). O PGAS se baseia na Avaliação Ambiental e
                 Social (AAS) e está estruturado conforme os Padrões de
@@ -37,7 +38,7 @@ const menuDefault = [
                 Políticas Ambientais e Sociais (MPAS) do BID.
                 <br />
                 <br />O objetivo geral do PGAS é assegurar que as obras e
-                intervenções do PROEMEM II sejam executadas de maneira
+                intervenções do PROEMEM 2.0 sejam executadas de maneira
                 ambientalmente responsável e socialmente sustentável, conforme a
                 legislação brasileira e os requisitos internacionais do BID. O
                 plano tem por finalidade prevenir, mitigar, controlar e, quando
@@ -63,10 +64,10 @@ const menuDefault = [
                 <br />O objetivo geral do PEPI é assegurar o diálogo
                 sistemático, a consulta informada e a participação efetiva das
                 partes interessadas no planejamento, implantação, operação e
-                monitoramento das ações do PROEMEM II, garantindo que os riscos,
-                impactos, expectativas e contribuições das comunidades e demais
-                grupos afetados sejam devidamente considerados e incorporados ao
-                processo de tomada de decisão do projeto.
+                monitoramento das ações do PROEMEM 2.0, garantindo que os
+                riscos, impactos, expectativas e contribuições das comunidades e
+                demais grupos afetados sejam devidamente considerados e
+                incorporados ao processo de tomada de decisão do projeto.
             </>
         ),
         title: 'PEPI',
@@ -84,9 +85,9 @@ const EstudosProemem = () => {
                     </h1>
                     <h3>
                         Os estudos e documentos apresentados serão divulgados
-                        durante as Consultas Públicas do PROEMEM II, com intuito
-                        informar a sociedade e dar mais transparência sobre as
-                        etapas do novo Projeto de Expansão e Melhoria
+                        durante as Consultas Públicas do PROEMEM 2.0, com
+                        intuito de informar a sociedade e dar mais transparência
+                        sobre as etapas do novo Projeto de Expansão e Melhoria
                         Educacional da Rede Pública Municipal de Manaus.
                     </h3>
                     <section className="space-y-2 *:leading-relaxed *:text-justify">
@@ -95,7 +96,7 @@ const EstudosProemem = () => {
                                 key={key}
                                 className="mb-8 flex flex-row gap-4 border-2 rounded-3xl border-tertiary overflow-hidden"
                             >
-                                <span className="flex flex-col gap-4 shrink-0 items-center justify-center bg-tertiary text-tertiary-foreground text-xs py-4 px-8">
+                                <span className="flex flex-col gap-4 shrink-0 items-center justify-center bg-tertiary text-xs py-4 px-8">
                                     <Image
                                         src={
                                             getImage(item.icon) ||
@@ -106,11 +107,11 @@ const EstudosProemem = () => {
                                         alt={item.title}
                                         className="object-contain size-20 my-4"
                                     />
-                                    <h3 className="text-lg font-bold">
+                                    <h3 className="text-lg font-bold text-tertiary-foreground">
                                         {item.title}
                                     </h3>
                                 </span>
-                                <div className="px-2 py-4 text-foreground text-pretty leading-relaxed text-justify flex items-center justify-center">
+                                <div className="px-2 py-4 text-pretty leading-relaxed text-justify flex items-center justify-center">
                                     {item.message}
                                 </div>
                             </div>

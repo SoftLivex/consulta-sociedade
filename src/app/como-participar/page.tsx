@@ -82,7 +82,7 @@ const ComoParticipar = () => {
                                         {faq.question}
                                     </h3>
                                 </div>
-                                <p className="text-foreground text-pretty leading-relaxed">
+                                <p className="text-pretty leading-relaxed">
                                     {faq.answer}
                                 </p>
                             </div>

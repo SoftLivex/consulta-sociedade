@@ -2,7 +2,7 @@ import CarouselDemo from './components/carrosel';
 
 export default function Home() {
     return (
-        <div className="mx-auto container flex flex-1 flex-col bg-background px-4 py-8 gap-6">
+        <div className="mx-auto container flex flex-1 flex-col px-4 py-8 gap-6">
             <div className="container flex-1 rounded-4xl overflow-hidden">
                 <CarouselDemo />
             </div>
