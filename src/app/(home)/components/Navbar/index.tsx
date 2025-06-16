@@ -55,10 +55,10 @@ const menuDefault: Navbar1Props['menu'] = [
 
 const Navbar = ({
     logo = {
-        url: '/',
-        src: '/Logo.svg',
+        url: './',
+        src: './Logo.svg',
         alt: 'logo',
-        title: '/Title.svg',
+        title: './Title.svg',
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -81,7 +81,7 @@ const Navbar = ({
                             />
                         </span>
                         <Image
-                            src={'/prefeitura.png'}
+                            src={'./prefeitura.png'}
                             className="max-h-8 w-auto"
                             alt={logo.alt}
                         />
@@ -115,7 +115,7 @@ const Navbar = ({
                                 alt={logo.alt}
                             />
                             <Image
-                                src={'/prefeitura-logo.png'}
+                                src={'./prefeitura-logo.png'}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
                             />
