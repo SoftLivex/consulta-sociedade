@@ -22,6 +22,7 @@ export interface MenuItem {
     description?: string;
     icon?: React.ReactNode;
     items?: MenuItem[];
+    outside?: boolean;
 }
 
 interface Navbar1Props {
@@ -46,6 +47,11 @@ interface Navbar1Props {
 const menuDefault: Navbar1Props['menu'] = [
     { title: 'Início', url: './' },
     { title: 'O que é Consulta Pública', url: './o-que-e-ppa' },
+    {
+        title: 'Intervenções',
+        url: 'https://geoprocessamento2025.notion.site/PROEMEM-2-Constru-es-e-Amplia-es-140a58fc231080e6bbdfed1dd08aca58',
+        outside: true,
+    },
     { title: 'Como Participar', url: './como-participar' },
     { title: 'Participe', url: './consulta-a-sociedade' },
     { title: 'Devolutiva', url: './devolutiva' },
@@ -54,7 +60,7 @@ const menuDefault: Navbar1Props['menu'] = [
 
 const Navbar = ({
     logo = {
-        url: '',
+        url: '/',
         src: '/Logo.svg',
         alt: 'logo',
         title: '/Title.svg',
@@ -69,15 +75,8 @@ const Navbar = ({
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
                             <img
-                                src={logo.src}
-                                className="max-h-8 w-full"
-                                alt={logo.alt}
-                                width="100"
-                                height="32"
-                            />
-                            <img
                                 src={logo.title}
-                                className="max-h-8 w-full"
+                                className="max-h-5 w-full"
                                 alt={logo.alt}
                                 width="100"
                                 height="32"

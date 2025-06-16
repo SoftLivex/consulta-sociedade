@@ -1,10 +1,15 @@
 export const Footer = () => {
     return (
-        <footer className="bg-sidebar p-4 flex items-center justify-center">
+        <footer className="bg-sidebar p-4 flex items-center justify-center  gap-8">
+            <img
+                src="/bid.svg"
+                alt={`semed`}
+                className="h-8 w-auto object-cover"
+            />
             <img
                 src="/SEMED.png"
                 alt={`semed`}
-                className="h-12 w-auto object-cover"
+                className="h-8 w-auto object-cover"
             />
         </footer>
     );
