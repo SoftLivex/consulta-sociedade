@@ -1,21 +1,32 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { consultaSchema } from './schema';
-
 export default function useFormConsultaSociedades() {
-    const signInForm = useForm({
+    const { executeRecaptcha } = useGoogleReCaptcha();
+    const form = useForm({
         resolver: zodResolver(consultaSchema),
+        defaultValues: {
+            recaptcha: '',
+        },
     });
-
-    const form = signInForm;
 
     const onSubmit = async (data: any) => {
         try {
-            // Show loading toast
+            if (!executeRecaptcha) {
+                toast.error(
+                    'reCAPTCHA não carregado. Tente novamente em instantes.',
+                );
+                throw new Error('reCAPTCHA não disponível');
+            }
+
+            // Executa o reCAPTCHA antes de enviar
+            const token = await executeRecaptcha('form_submit');
+            data.recaptcha = token;
+
             const loadingToast = toast.loading('Enviando sua consulta...');
 
-            // Call the API endpoint
             const response = await fetch('/api/email', {
                 method: 'POST',
                 headers: {
@@ -25,51 +36,35 @@ export default function useFormConsultaSociedades() {
             });
 
             const result = await response.json();
-
-            // Dismiss loading toast
             toast.dismiss(loadingToast);
 
             if (response.ok && result.success) {
-                // Success - show success message
                 toast.success(
                     result.message ||
                         'Consulta enviada com sucesso! Verifique seu e-mail para confirmação.',
                 );
-
-                // Reset form after successful submission
                 form.reset();
-
                 return result;
             } else {
-                // Handle API errors
                 const errorMessage = result.error || 'Erro ao enviar consulta';
                 toast.error(errorMessage);
-
-                // Log detailed errors for debugging
                 if (result.details) {
                     console.error('Form validation errors:', result.details);
                 }
-
                 throw new Error(errorMessage);
             }
         } catch (error) {
-            // Handle network or other errors
             console.error('Error submitting form:', error);
-
             let errorMessage = 'Erro ao enviar consulta. Tente novamente.';
-
             if (error instanceof Error) {
-                // Don't show technical error messages to users
                 if (error.message.includes('fetch')) {
                     errorMessage =
                         'Erro de conexão. Verifique sua internet e tente novamente.';
                 } else if (!error.message.includes('Erro ao')) {
-                    // Only show user-friendly error messages
                     errorMessage =
                         'Erro inesperado. Tente novamente em alguns instantes.';
                 }
             }
-
             toast.error(errorMessage);
             throw error;
         }
@@ -78,6 +73,6 @@ export default function useFormConsultaSociedades() {
     return {
         form,
         onSubmit,
-        isPending: signInForm.formState.isSubmitting,
+        isPending: form.formState.isSubmitting,
     };
 }

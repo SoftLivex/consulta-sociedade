@@ -17,11 +17,11 @@ const FormSchema = z.object({
     numero: z.string().optional(),
     area_tematica: z.string().optional(),
     pergunta: z.string().optional(),
+    recaptcha: z.string().min(1, 'reCAPTCHA obrigatório'), // adicionando recaptcha no schema
 });
 
 export async function POST(request: NextRequest) {
     try {
-        // Parse request body
         const body = await request.json();
 
         // Validate form data
@@ -39,7 +39,33 @@ export async function POST(request: NextRequest) {
 
         const formData = validationResult.data;
 
-        // Initialize database (create table if it doesn't exist)
+        // ✅ Valida o token do reCAPTCHA no Google
+        const secretKey = process.env.RECAPTCHA_SECRET_KEY!;
+        const response = await fetch(
+            `https://www.google.com/recaptcha/api/siteverify`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `secret=${secretKey}&response=${formData.recaptcha}`,
+            },
+        );
+
+        const recaptchaResult = await response.json();
+
+        if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: 'Falha na verificação do reCAPTCHA',
+                    details: recaptchaResult,
+                },
+                { status: 400 },
+            );
+        }
+
+        // Initialize database
         await initializeDatabase();
 
         // Insert data into database
@@ -57,15 +83,12 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Send emails (don't fail the request if email fails)
+        // Send emails
         const emailPromises = [];
-
         try {
-            // Verify email connection first
             const emailConnectionOk = await verifyEmailConnection();
 
             if (emailConnectionOk) {
-                // Send confirmation email to user
                 emailPromises.push(
                     sendConfirmationEmail(formData).catch((error) => {
                         console.error(
@@ -75,8 +98,6 @@ export async function POST(request: NextRequest) {
                         return null;
                     }),
                 );
-
-                // Send notification email to admin
                 emailPromises.push(
                     sendNotificationEmail(formData).catch((error) => {
                         console.error(
@@ -93,12 +114,10 @@ export async function POST(request: NextRequest) {
             console.error('Email setup error:', emailError);
         }
 
-        // Wait for all email promises to complete (but don't fail if they don't)
         if (emailPromises.length > 0) {
             await Promise.allSettled(emailPromises);
         }
 
-        // Return success response
         return NextResponse.json(
             {
                 success: true,
@@ -114,31 +133,6 @@ export async function POST(request: NextRequest) {
             {
                 success: false,
                 error: 'Erro interno do servidor',
-            },
-            { status: 500 },
-        );
-    }
-}
-
-// Optional: GET method to retrieve form submissions (for admin use)
-export async function GET() {
-    try {
-        const { getFormSubmissions } = await import('@/lib/database');
-        const submissions = await getFormSubmissions();
-
-        return NextResponse.json(
-            {
-                success: true,
-                data: submissions,
-            },
-            { status: 200 },
-        );
-    } catch (error) {
-        console.error('Error fetching submissions:', error);
-        return NextResponse.json(
-            {
-                success: false,
-                error: 'Erro ao buscar submissões',
             },
             { status: 500 },
         );

@@ -2,48 +2,57 @@
 
 import React from 'react';
 import {
-    GoogleReCaptcha,
     GoogleReCaptchaProvider,
+    useGoogleReCaptcha,
 } from 'react-google-recaptcha-v3';
-import { Control, Controller, FieldPath, FieldValues } from 'react-hook-form';
+import { FieldPath, FieldValues, UseFormSetValue } from 'react-hook-form';
 
 interface ReCaptchaFieldProps<T extends FieldValues> {
     name: FieldPath<T>;
-    control: Control<T>;
+    setValue: UseFormSetValue<T>;
     siteKey: string;
-    refresh?: ()=>void;
+    onExecute?: () => void; // callback opcional para avisar que executou
 }
 
 export function ReCaptchaField<T extends FieldValues>({
     name,
-    control,
+    setValue,
     siteKey,
-    refresh,
+    onExecute,
 }: ReCaptchaFieldProps<T>) {
-    const [refreshReCaptcha, setRefreshReCaptcha] = React.useState(false);
-    React.useEffect(() => {
-        if (refresh) {
-            setRefreshReCaptcha(true);
-            refresh();
-        } else {
-            setRefreshReCaptcha(false);
-        }
-    }, [refresh]);
-    
     return (
         <GoogleReCaptchaProvider reCaptchaKey={siteKey}>
-            <Controller
-                control={control}
-                name={name}
-                render={({ field }) => (
-                    <GoogleReCaptcha
-                        onVerify={(token) => {
-                            field.onChange(token);
-                        }}
-                        refreshReCaptcha={refreshReCaptcha}
-                    />
-                )}
-            />
+           {children}
         </GoogleReCaptchaProvider>
     );
+}
+
+function ReCaptchaRunner<T extends FieldValues>({
+    name,
+    setValue,
+    onExecute,
+}: {
+    name: FieldPath<T>;
+    setValue: UseFormSetValue<T>;
+    onExecute?: () => void;
+}) {
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
+    // Exponha função para o submit disparar
+    const runRecaptcha = React.useCallback(async () => {
+        if (!executeRecaptcha) {
+            console.warn('executeRecaptcha ainda não está pronto');
+            return;
+        }
+
+        try {
+            const token: any = await executeRecaptcha('form_submit');
+            setValue(name, token, { shouldValidate: true });
+            onExecute?.();
+        } catch (err) {
+            console.error('Erro ao executar reCAPTCHA:', err);
+        }
+    }, [executeRecaptcha, name, setValue, onExecute]);
+
+    return null;
 }
