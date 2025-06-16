@@ -4,6 +4,7 @@ import { InputField } from '@/components/ui/shuip/input-field';
 import { SelectField } from '@/components/ui/shuip/select-field';
 import { SubmitButton } from '@/components/ui/shuip/submit-button';
 import { TextareaField } from '@/components/ui/shuip/textarea-field';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import useFormConsultaSociedades from './hooks';
 
 const title = 'Prefeitura de Manaus Priorizando a Participação Popular';
@@ -103,6 +104,8 @@ const ConsultaASociedade = () => {
                                     placeholder="Escreva sua pergunta aqui..."
                                 />
                             </div>
+
+                            {form.getValues('recaptcha')}
                             <SubmitButton
                                 className="w-full"
                                 loading={isPending}
@@ -116,5 +119,11 @@ const ConsultaASociedade = () => {
         </section>
     );
 };
-
-export default ConsultaASociedade;
+const Recaptcha = () => (
+    <GoogleReCaptchaProvider
+        reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+    >
+        <ConsultaASociedade />
+    </GoogleReCaptchaProvider>
+);
+export default Recaptcha;

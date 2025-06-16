@@ -13,7 +13,6 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
 
@@ -23,6 +22,7 @@ export interface MenuItem {
     description?: string;
     icon?: React.ReactNode;
     items?: MenuItem[];
+    outside?: boolean;
 }
 
 interface Navbar1Props {
@@ -47,18 +47,23 @@ interface Navbar1Props {
 const menuDefault: Navbar1Props['menu'] = [
     { title: 'Início', url: './' },
     { title: 'O que é Consulta Pública', url: './o-que-e-ppa' },
+    {
+        title: 'Intervenções',
+        url: 'https://geoprocessamento2025.notion.site/PROEMEM-2-Constru-es-e-Amplia-es-140a58fc231080e6bbdfed1dd08aca58',
+        outside: true,
+    },
     { title: 'Como Participar', url: './como-participar' },
     { title: 'Participe', url: './consulta-a-sociedade' },
     { title: 'Devolutiva', url: './devolutiva' },
-    { title: 'Estudos PROEMEM II', url: './estudos-proemem-2' },
+    { title: 'Estudos PROEMEM', url: './estudos-proemem-2' },
 ];
 
 const Navbar = ({
     logo = {
-        url: './',
-        src: './Logo.svg',
+        url: '/',
+        src: '/Logo.svg',
         alt: 'logo',
-        title: './Title.svg',
+        title: '/Title.svg',
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -69,21 +74,18 @@ const Navbar = ({
                 <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
-                            <Image
-                                src={logo.src}
-                                className="max-h-8 w-full"
-                                alt={logo.alt}
-                            />
-                            <Image
+                            <img
                                 src={logo.title}
-                                className="max-h-8 w-full"
+                                className="max-h-5 w-full"
                                 alt={logo.alt}
+                                width="100"
+                                height="32"
                             />
                         </span>
-                        <Image
-                            src={'./prefeitura.png'}
-                            className="max-h-8 w-auto"
-                            alt={logo.alt}
+                        <img
+                            src="/bid.svg"
+                            alt={`semed`}
+                            className="max-h-6 w-auto object-cover"
                         />
                     </Link>
 
@@ -109,15 +111,15 @@ const Navbar = ({
                             href={logo.url}
                             className="flex items-center gap-4"
                         >
-                            <Image
-                                src={logo.src}
-                                className="max-h-8"
+                            <img
+                                src={logo.title}
+                                className="max-h-5 w-full"
                                 alt={logo.alt}
                             />
-                            <Image
-                                src={'./prefeitura-logo.png'}
-                                className="max-h-8 w-full"
-                                alt={logo.alt}
+                            <img
+                                src="/bid.svg"
+                                alt={`semed`}
+                                className="max-h-6 w-auto object-cover"
                             />
                         </Link>
                         <Sheet>
@@ -133,7 +135,7 @@ const Navbar = ({
                                             href={logo.url}
                                             className="flex items-center gap-2"
                                         >
-                                            <Image
+                                            <img
                                                 src={logo.src}
                                                 className="max-h-8"
                                                 alt={logo.alt}

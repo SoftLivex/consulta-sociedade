@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const ComoParticipar = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
@@ -14,7 +12,7 @@ const ComoParticipar = () => {
                             Consultas Públicas relacionadas às ações
                             socioambientais do Projeto de Expansão e Melhoria
                             Educacional da Rede Pública Municipal de Manaus –
-                            PROEMEM II.
+                            PROEMEM.
                         </p>
                         <p className="leading-relaxed text font-bold text-justify">
                             O Relatório Final da Devolutiva respondendo
@@ -23,8 +21,8 @@ const ComoParticipar = () => {
                         </p>
                     </div>
                     <div className="hidden lg:flex">
-                        <Image
-                            src={'./faq/devolutiva.png'}
+                        <img
+                            src={'/faq/devolutiva.png'}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
                         />

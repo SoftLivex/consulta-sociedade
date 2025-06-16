@@ -11,6 +11,7 @@ import {
     NavigationMenuLink,
     NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MenuItem } from '.';
@@ -42,11 +43,15 @@ export const RenderMenuItem = (item: MenuItem) => {
             <NavigationMenuLink
                 href={item.url}
                 data-active={isActive}
-                className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-sidebar text-sidebar-foreground px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground
-                 data-[active=true]:underline data-[active=true]:decoration-secondary
+                className="group flex flex-row h-10 w-max items-center justify-center rounded-md bg-sidebar text-sidebar-foreground px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground
+                 data-[active=true]:underline data-[active=true]:decoration-secondary 
                 "
+                target={item.outside ? '_blank' : '_self'}
             >
                 {item.title}
+                {item.outside && (
+                    <ExternalLink className="size-3 stroke-secondary" />
+                )}
             </NavigationMenuLink>
         </NavigationMenuItem>
     );
@@ -78,10 +83,13 @@ export const RenderMobileMenuItem = (item: MenuItem) => {
         <Link
             key={item.title}
             href={item.url}
-            className="text-md font-semibold data-[active=true]:underline data-[active=true]:decoration-secondary"
+            className="text-md font-semibold data-[active=true]:underline data-[active=true]:decoration-secondary flex flex-row items-center gap-1"
             data-active={isActive}
         >
             {item.title}
+            {item.outside && (
+                <ExternalLink className="size-3 stroke-secondary" />
+            )}
         </Link>
     );
 };
@@ -91,10 +99,16 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
         <Link
             className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
             href={item.url}
+            target={item.outside ? '_blank' : '_self'}
         >
             <div className="text-foreground">{item.icon}</div>
             <div>
-                <div className="text-sm font-semibold">{item.title}</div>
+                <div className="text-sm font-semibold">
+                    {item.title}
+                    {item.outside && (
+                        <ExternalLink className="size-3 stroke-secondary" />
+                    )}
+                </div>
                 {item.description && (
                     <p className="text-sm leading-snug text-muted-foreground">
                         {item.description}
