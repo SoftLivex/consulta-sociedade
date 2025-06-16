@@ -83,11 +83,9 @@ const Navbar = ({
                             />
                         </span>
                         <img
-                            src={'/prefeitura.png'}
-                            className="max-h-8 w-auto"
-                            alt={logo.alt}
-                            width="100"
-                            height="32"
+                            src="/bid.svg"
+                            alt={`semed`}
+                            className="max-h-6 w-auto object-cover"
                         />
                     </Link>
 
@@ -114,14 +112,14 @@ const Navbar = ({
                             className="flex items-center gap-4"
                         >
                             <img
-                                src={logo.src}
-                                className="max-h-8"
+                                src={logo.title}
+                                className="max-h-5 w-full"
                                 alt={logo.alt}
                             />
                             <img
-                                src={'/prefeitura-logo.png'}
-                                className="max-h-8 w-full"
-                                alt={logo.alt}
+                                src="/bid.svg"
+                                alt={`semed`}
+                                className="max-h-6 w-auto object-cover"
                             />
                         </Link>
                         <Sheet>
