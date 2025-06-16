@@ -4,7 +4,7 @@ const EstudosProemem = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
             <div className="container mx-auto flex-1 flex flex-col">
-                <div className="flex grid-cols-2 lg:grid gap-16  max-w-6xl self-center container flex-1">
+                <div className="flex grid-cols-2 lg:grid gap-16 self-center container flex-1">
                     <div className="flex flex-col gap-6">
                         <h1 className="mt-4 text-6xl font-bold text-primary">
                             Estudos PROEMEM
