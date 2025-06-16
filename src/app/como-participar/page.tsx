@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 const faqs = [
     {
         icon: '/faq/participe.png',
@@ -38,7 +36,7 @@ const ComoParticipar = () => {
                             className="flex-1 mb-8 flex gap-4 relative border-2 border-tertiary rounded-4xl px-6 py-4 pt-15 mt-10 max-w-lg"
                         >
                             <span className="absolute top-0 left-0 right-0 mx-auto -translate-y-1/2 flex size-25 shrink-0 items-center justify-center rounded-full bg-tertiary text-tertiary-foreground">
-                                <Image
+                                <img
                                     src={faq.icon}
                                     alt={faq.question}
                                     className="object-contain size-18"

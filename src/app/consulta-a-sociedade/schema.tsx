@@ -11,4 +11,5 @@ export const consultaSchema = z.object({
     area_tematica: z
         .string()
         .min(1, { message: 'Área temática é obrigatória' }),
+    recaptcha: z.string().min(1, { message: 'Recaptcha é obrigatório' }),
 });

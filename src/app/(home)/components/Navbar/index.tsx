@@ -13,7 +13,6 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
 
@@ -69,21 +68,27 @@ const Navbar = ({
                 <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
-                            <Image
+                            <img
                                 src={logo.src}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
+                                width="100"
+                                height="32"
                             />
-                            <Image
+                            <img
                                 src={logo.title}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
+                                width="100"
+                                height="32"
                             />
                         </span>
-                        <Image
+                        <img
                             src={'/prefeitura.png'}
                             className="max-h-8 w-auto"
                             alt={logo.alt}
+                            width="100"
+                            height="32"
                         />
                     </Link>
 
@@ -109,12 +114,12 @@ const Navbar = ({
                             href={logo.url}
                             className="flex items-center gap-4"
                         >
-                            <Image
+                            <img
                                 src={logo.src}
                                 className="max-h-8"
                                 alt={logo.alt}
                             />
-                            <Image
+                            <img
                                 src={'/prefeitura-logo.png'}
                                 className="max-h-8 w-full"
                                 alt={logo.alt}
@@ -133,7 +138,7 @@ const Navbar = ({
                                             href={logo.url}
                                             className="flex items-center gap-2"
                                         >
-                                            <Image
+                                            <img
                                                 src={logo.src}
                                                 className="max-h-8"
                                                 alt={logo.alt}

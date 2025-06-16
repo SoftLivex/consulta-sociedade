@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
 import 'swiper/css/effect-fade';
@@ -47,7 +46,7 @@ export default function CarouselDemo() {
             {['/banner/banner-1.png', '/banner/banner-2.png'].map(
                 (img, index) => (
                     <SwiperSlide key={index} className="select-none relative">
-                        <Image
+                        <img
                             src={img}
                             alt={`banner-${index}`}
                             className="h-full w-full object-cover"

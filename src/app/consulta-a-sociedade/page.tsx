@@ -1,4 +1,5 @@
 'use client';
+import { ReCaptchaField } from '@/components/form/googleReCaptcha';
 import { Form } from '@/components/ui/form';
 import { InputField } from '@/components/ui/shuip/input-field';
 import { SelectField } from '@/components/ui/shuip/select-field';
@@ -103,6 +104,14 @@ const ConsultaASociedade = () => {
                                     placeholder="Escreva sua pergunta aqui..."
                                 />
                             </div>
+                            <ReCaptchaField
+                                name="recaptcha"
+                                siteKey={
+                                    process.env
+                                        .NEXT_GOOGLE_RECAPTCHA_SITE_KEY ?? ''
+                                }
+                                control={form.control}
+                            />
                             <SubmitButton
                                 className="w-full"
                                 loading={isPending}
