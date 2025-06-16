@@ -75,14 +75,13 @@ const Navbar = ({
                 {/* Desktop Menu */}
                 <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
-                        <span className="flex flex-row gap-0">
-                            <Image
-                                src={logo.title}
-                                className="max-h-5 w-full"
-                                alt={logo.alt}
-                                fill
-                            />
-                        </span>
+                        <Image
+                            src={logo.title}
+                            className="max-h-5 w-auto"
+                            alt={logo.alt}
+                            width="100"
+                            height="32"
+                        />
                         <Image
                             src={getImage('/bid.svg')}
                             alt={`semed`}
