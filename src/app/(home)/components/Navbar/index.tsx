@@ -55,7 +55,7 @@ const menuDefault: Navbar1Props['menu'] = [
     { title: 'Como Participar', url: './como-participar' },
     { title: 'Participe', url: './consulta-a-sociedade' },
     { title: 'Devolutiva', url: './devolutiva' },
-    { title: 'Estudos PROEMEM II', url: './estudos-proemem-2' },
+    { title: 'Estudos PROEMEM', url: './estudos-proemem-2' },
 ];
 
 const Navbar = ({

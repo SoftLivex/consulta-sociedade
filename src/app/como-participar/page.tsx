@@ -1,25 +1,51 @@
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+
 const faqs = [
     {
         icon: '/faq/participe.png',
         question: 'Acesse o menu PARTICIPE',
-        answer: 'O cidadão interessado deve iniciar o processo clicando na opção "PARTICIPE" no menu principal do site.',
+        answer: (
+            <>
+                O cidadão interessado deve iniciar o processo clicando na opção{' '}
+                <Button variant="link" size="sm" className="p-0" asChild>
+                    <Link href="/consulta-a-sociedade">"PARTICIPE"</Link>
+                </Button>{' '}
+                no menu principal do site.
+            </>
+        ),
     },
     {
         icon: '/faq/id-card.png',
         question: 'Faça sua identificação',
-        answer: 'Informe seus dados para que a gente possa reconhecer sua participação e garantir que sua contribuição seja considerada.',
+        answer: (
+            <>
+                Informe seus dados para que a gente possa reconhecer sua
+                participação e garantir que sua contribuição seja considerada.
+            </>
+        ),
     },
     {
         icon: '/faq/area-interesse.png',
         question: 'Escolha sua área de interesse',
-        answer: 'Marque as prioridades entre as opções disponíveis.',
+        answer: <>Marque as prioridades entre as opções disponíveis.</>,
     },
     {
         icon: '/faq/sugestao.png',
         question: 'Envie sugestões',
-        answer: 'Caso tenha uma sugestão de área que não esteja na lista, utilize o campo PERGUNTA para escrevê-la.',
+        answer: (
+            <>
+                Caso tenha uma sugestão de área que não esteja na lista, utilize
+                o campo{' '}
+                <Button variant="link" size="sm" className="p-0" asChild>
+                    <Link href="/consulta-a-sociedade">"PERGUNTA"</Link>
+                </Button>{' '}
+                para escrevê-la.
+            </>
+        ),
     },
 ];
+
 const ComoParticipar = () => {
     return (
         <section className="py-16 px-8 container mx-auto flex flex-col flex-1">
@@ -58,8 +84,8 @@ const ComoParticipar = () => {
             </div>
             <p className="mx-auto max-w-2xl text-center">
                 Sua opinião pode transformar a educação! Participe do{' '}
-                <b>PROEMEM II</b> e contribua com sugestões para os novos
-                projetos da rede pública municipal.
+                <b>PROEMEM</b> e contribua com sugestões para os novos projetos
+                da rede pública municipal.
             </p>
         </section>
     );

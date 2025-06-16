@@ -12,7 +12,7 @@ const ComoParticipar = () => {
                             Consultas Públicas relacionadas às ações
                             socioambientais do Projeto de Expansão e Melhoria
                             Educacional da Rede Pública Municipal de Manaus –
-                            PROEMEM II.
+                            PROEMEM.
                         </p>
                         <p className="leading-relaxed text font-bold text-justify">
                             O Relatório Final da Devolutiva respondendo
