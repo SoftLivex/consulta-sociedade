@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const EstudosProemem = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
@@ -75,7 +77,7 @@ const EstudosProemem = () => {
                         </section>
                     </div>
                     <div className="hidden lg:flex">
-                        <img
+                        <Image
                             src={'/faq/estudo.png'}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}

@@ -13,6 +13,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
+import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
 
@@ -74,7 +75,7 @@ const Navbar = ({
                 <nav className="hidden justify-between xl:flex">
                     <Link href={logo.url} className="flex items-center gap-6">
                         <span className="flex flex-row gap-0">
-                            <img
+                            <Image
                                 src={logo.title}
                                 className="max-h-5 w-full"
                                 alt={logo.alt}
@@ -82,7 +83,7 @@ const Navbar = ({
                                 height="32"
                             />
                         </span>
-                        <img
+                        <Image
                             src="/bid.svg"
                             alt={`semed`}
                             className="max-h-6 w-auto object-cover"
@@ -111,12 +112,12 @@ const Navbar = ({
                             href={logo.url}
                             className="flex items-center gap-4"
                         >
-                            <img
+                            <Image
                                 src={logo.title}
                                 className="max-h-5 w-full"
                                 alt={logo.alt}
                             />
-                            <img
+                            <Image
                                 src="/bid.svg"
                                 alt={`semed`}
                                 className="max-h-6 w-auto object-cover"
@@ -135,7 +136,7 @@ const Navbar = ({
                                             href={logo.url}
                                             className="flex items-center gap-2"
                                         >
-                                            <img
+                                            <Image
                                                 src={logo.src}
                                                 className="max-h-8"
                                                 alt={logo.alt}

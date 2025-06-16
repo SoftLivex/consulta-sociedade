@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const faqs = [
@@ -9,7 +10,9 @@ const faqs = [
             <>
                 O cidadão interessado deve iniciar o processo clicando na opção{' '}
                 <Button variant="link" size="sm" className="p-0" asChild>
-                    <Link href="/consulta-a-sociedade">"PARTICIPE"</Link>
+                    <Link href="/consulta-a-sociedade">
+                        &quot;PARTICIPE&quot;
+                    </Link>
                 </Button>{' '}
                 no menu principal do site.
             </>
@@ -38,7 +41,9 @@ const faqs = [
                 Caso tenha uma sugestão de área que não esteja na lista, utilize
                 o campo{' '}
                 <Button variant="link" size="sm" className="p-0" asChild>
-                    <Link href="/consulta-a-sociedade">"PERGUNTA"</Link>
+                    <Link href="/consulta-a-sociedade">
+                        &quot;PERGUNTA&quot;
+                    </Link>
                 </Button>{' '}
                 para escrevê-la.
             </>
@@ -62,7 +67,7 @@ const ComoParticipar = () => {
                             className="flex-1 mb-8 flex gap-4 relative border-2 border-tertiary rounded-4xl px-6 py-4 pt-15 mt-10 max-w-lg"
                         >
                             <span className="absolute top-0 left-0 right-0 mx-auto -translate-y-1/2 flex size-25 shrink-0 items-center justify-center rounded-full bg-tertiary text-tertiary-foreground">
-                                <img
+                                <Image
                                     src={faq.icon}
                                     alt={faq.question}
                                     className="object-contain size-18"
