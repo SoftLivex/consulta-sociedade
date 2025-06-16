@@ -36,11 +36,10 @@ const faqs = [
     },
     {
         icon: getImage('/faq/sugestao.png'),
-        question: 'Envie sugestões',
+        question: 'Envie perguntas',
         answer: (
             <>
-                Caso tenha uma sugestão de área que não esteja na lista, utilize
-                o campo{' '}
+                Caso tenha opiniões, dúvidas, críticas ou sugestões das áreas temáticas, utilize o campo{' '}
                 <Button variant="link" size="sm" className="p-0" asChild>
                     <Link href="/consulta-a-sociedade">
                         &quot;PERGUNTA&quot;
