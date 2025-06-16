@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const ComoParticipar = () => {
     return (
         <section className="py-16 px-8 flex flex-col  flex-1">
@@ -21,7 +23,7 @@ const ComoParticipar = () => {
                         </p>
                     </div>
                     <div className="hidden lg:flex">
-                        <img
+                        <Image
                             src={'/faq/devolutiva.png'}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
