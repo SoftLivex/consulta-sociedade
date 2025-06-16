@@ -1,10 +1,11 @@
 import { Button } from '@/components/ui/button';
+import { getImage } from '@/lib/getImage';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const faqs = [
     {
-        icon: '/faq/participe.png',
+        icon: getImage('/faq/participe.png'),
         question: 'Acesse o menu PARTICIPE',
         answer: (
             <>
@@ -19,7 +20,7 @@ const faqs = [
         ),
     },
     {
-        icon: '/faq/id-card.png',
+        icon: getImage('/faq/id-card.png'),
         question: 'Faça sua identificação',
         answer: (
             <>
@@ -29,12 +30,12 @@ const faqs = [
         ),
     },
     {
-        icon: '/faq/area-interesse.png',
+        icon: getImage('/faq/area-interesse.png'),
         question: 'Escolha sua área de interesse',
         answer: <>Marque as prioridades entre as opções disponíveis.</>,
     },
     {
-        icon: '/faq/sugestao.png',
+        icon: getImage('/faq/sugestao.png'),
         question: 'Envie sugestões',
         answer: (
             <>
@@ -71,6 +72,8 @@ const ComoParticipar = () => {
                                     src={faq.icon}
                                     alt={faq.question}
                                     className="object-contain size-18"
+                                    width="72"
+                                    height="72"
                                 />
                             </span>
                             <div className="text-center flex flex-col items-center gap-4">

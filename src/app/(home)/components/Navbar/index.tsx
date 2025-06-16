@@ -13,6 +13,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
+import { getImage } from '@/lib/getImage';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
@@ -62,9 +63,9 @@ const menuDefault: Navbar1Props['menu'] = [
 const Navbar = ({
     logo = {
         url: '/',
-        src: './Logo.svg',
+        src: getImage('/Logo.svg'),
         alt: 'logo',
-        title: './Title.svg',
+        title: getImage('/Title.svg'),
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -84,9 +85,11 @@ const Navbar = ({
                             />
                         </span>
                         <Image
-                            src="./bid.svg"
+                            src={getImage('/bid.svg')}
                             alt={`semed`}
                             className="max-h-6 w-auto object-cover"
+                            width="100"
+                            height="32"
                         />
                     </Link>
 
@@ -116,11 +119,15 @@ const Navbar = ({
                                 src={logo.title}
                                 className="max-h-5 w-full"
                                 alt={logo.alt}
+                                width="100"
+                                height="32"
                             />
                             <Image
-                                src="./bid.svg"
+                                src={getImage('/bid.svg')}
                                 alt={`semed`}
                                 className="max-h-6 w-auto object-cover"
+                                width="100"
+                                height="32"
                             />
                         </Link>
                         <Sheet>
@@ -140,6 +147,8 @@ const Navbar = ({
                                                 src={logo.src}
                                                 className="max-h-8"
                                                 alt={logo.alt}
+                                                width="100"
+                                                height="32"
                                             />
                                         </Link>
                                     </SheetTitle>

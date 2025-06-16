@@ -1,3 +1,4 @@
+import { getImage } from '@/lib/getImage';
 import Image from 'next/image';
 
 const EstudosProemem = () => {
@@ -78,9 +79,11 @@ const EstudosProemem = () => {
                     </div>
                     <div className="hidden lg:flex">
                         <Image
-                            src={'./faq/estudo.png'}
+                            src={getImage('/faq/estudo.png')}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
+                            width="800"
+                            height="800"
                         />
                     </div>
                 </div>
