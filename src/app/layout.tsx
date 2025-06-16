@@ -1,3 +1,4 @@
+import TextToSpeechReader from '@/components/web2audio';
 import type { Metadata } from 'next';
 import { Toaster } from 'sonner';
 import { Footer } from './(home)/components/footer';
@@ -22,11 +23,13 @@ export default function RootLayout({
             <body className={`antialiased`}>
                 <div className="root flex flex-col min-h-screen">
                     <Navbar />
-                    <div className="flex-1 flex flex-col bg-background">
+                    <div className="conteudo flex-1 flex flex-col bg-background">
                         {children}
                     </div>
                     <Footer />
                 </div>
+                <TextToSpeechReader selector=".conteudo" />
+
                 <Toaster
                     position="top-right"
                     toastOptions={{
