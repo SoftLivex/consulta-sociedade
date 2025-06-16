@@ -56,9 +56,9 @@ const menuDefault: Navbar1Props['menu'] = [
 const Navbar = ({
     logo = {
         url: './',
-        src: './Logo.svg',
+        src: require('./Logo.svg'),
         alt: 'logo',
-        title: './Title.svg',
+        title: require('./Title.svg'),
     },
     menu = menuDefault,
 }: Navbar1Props) => {

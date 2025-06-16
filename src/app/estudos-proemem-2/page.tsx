@@ -78,7 +78,7 @@ const EstudosProemem = () => {
                     </div>
                     <div className="hidden lg:flex">
                         <Image
-                            src={'./faq/devolutiva.png'}
+                            src={require('./faq/devolutiva.png')}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
                         />
