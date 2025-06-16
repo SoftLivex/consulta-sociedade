@@ -117,7 +117,7 @@ const Navbar = ({
                         >
                             <Image
                                 src={logo.title}
-                                className="max-h-5 w-full"
+                                className="max-h-5 w-fit"
                                 alt={logo.alt}
                                 width="100"
                                 height="32"
@@ -125,7 +125,7 @@ const Navbar = ({
                             <Image
                                 src={getImage('/bid.svg')}
                                 alt={`semed`}
-                                className="max-h-6 w-auto object-cover"
+                                className="max-h-6 w-fit object-cover"
                                 width="100"
                                 height="32"
                             />
