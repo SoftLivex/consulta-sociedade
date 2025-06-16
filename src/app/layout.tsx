@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Toaster } from 'sonner';
 import { Footer } from './(home)/components/footer';
 import { Navbar } from './(home)/components/Navbar';
 import './globals.css';
@@ -24,6 +25,17 @@ export default function RootLayout({
                     <div className="flex-1 flex flex-col">{children}</div>
                     <Footer />
                 </div>
+                <Toaster 
+                    position="top-right"
+                    toastOptions={{
+                        duration: 4000,
+                        style: {
+                            background: 'white',
+                            color: 'black',
+                            border: '1px solid #e5e7eb',
+                        },
+                    }}
+                />
             </body>
         </html>
     );
