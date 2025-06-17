@@ -92,8 +92,8 @@ const ComoParticipar = () => {
             </div>
             <p className="mx-auto max-w-2xl text-center">
                 Sua opinião pode transformar a educação! Participe do{' '}
-                <b>PROEMEM 2.0</b> e contribua com sugestões para os novos
-                projetos da rede pública municipal.
+                <b>PROEMEM</b> e contribua com sugestões para os novos projetos
+                da rede pública municipal.
             </p>
         </section>
     );
