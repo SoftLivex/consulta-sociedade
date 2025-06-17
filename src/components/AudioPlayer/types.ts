@@ -3,8 +3,6 @@ export interface AudioPlayerProps {
     subtitle?: string;
     description?: string;
     audioSrc: string;
-    cover?: string;
     className?: string;
     background?: string;
-    watermarkIcon?: React.ReactNode;
 }

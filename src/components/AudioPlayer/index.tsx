@@ -1,43 +1,67 @@
-'use client';
-
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Pause, Play } from 'lucide-react';
-import { useAudioPlayer } from './hook';
+import { useEffect, useRef, useState } from 'react';
+import { Button } from '../ui/button';
 import { AudioPlayerProps } from './types';
 
 export function AudioPlayer({
-    title,
-    subtitle,
-    description,
-    audioSrc,
-    cover,
     background = 'bg-primary',
-    className,
-    watermarkIcon,
+    ...p
 }: AudioPlayerProps) {
-    const { isPlaying, audioRef, togglePlay, setIsPlaying } = useAudioPlayer();
+    const audioObj = useRef<HTMLAudioElement | null>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    useEffect(() => {
+        // Instancia o áudio apenas uma vez
+        audioObj.current = new window.Audio(p.audioSrc);
+
+        // Eventos para sincronizar estado
+        const handleEnded = () => setIsPlaying(false);
+        const handlePause = () => setIsPlaying(false);
+        const handlePlay = () => setIsPlaying(true);
+
+        audioObj.current.addEventListener('ended', handleEnded);
+        audioObj.current.addEventListener('pause', handlePause);
+        audioObj.current.addEventListener('play', handlePlay);
+
+        return () => {
+            audioObj.current?.pause();
+            audioObj.current?.removeEventListener('ended', handleEnded);
+            audioObj.current?.removeEventListener('pause', handlePause);
+            audioObj.current?.removeEventListener('play', handlePlay);
+            audioObj.current = null;
+        };
+    }, [p.audioSrc]);
+
+    const togglePlay = () => {
+        if (!audioObj.current) return;
+        if (isPlaying) {
+            audioObj.current.pause();
+        } else {
+            audioObj.current.play();
+        }
+    };
 
     return (
         <div
             className={cn(
                 `rounded-4xl shadow-none flex flex-row items-stretch text-white max-w-xl relative overflow-hidden`,
                 background,
-                className,
+                p.className,
             )}
         >
             <div className="flex flex-col flex-1 justify-between p-6 z-10">
                 <div>
                     <h2 className="text-3xl font-bold leading-tight mb-1">
-                        {title}
+                        {p.title}
                     </h2>
-
-                    {subtitle && (
-                        <div className="text-base mb-2">{subtitle}</div>
+                    {p.subtitle && (
+                        <div className="text-base mb-2">{p.subtitle}</div>
                     )}
-
-                    {description && (
-                        <p className="text-sm text-white mb-4">{description}</p>
+                    {p.description && (
+                        <p className="text-sm text-white mb-4">
+                            {p.description}
+                        </p>
                     )}
                 </div>
 
@@ -54,35 +78,9 @@ export function AudioPlayer({
                             <Play className="size-10" />
                         )}
                     </Button>
-
-                    <audio
-                        ref={audioRef}
-                        src={audioSrc}
-                        onEnded={() => setIsPlaying(false)}
-                        onPause={() => setIsPlaying(false)}
-                        onPlay={() => setIsPlaying(true)}
-                    />
                 </div>
             </div>
-
-            {cover && (
-                <div className="w-40 h-40 flex-shrink-0 rounded-r-xl overflow-hidden bg-zinc-800 flex items-center justify-center z-10">
-                    <img
-                        src={cover}
-                        alt={title}
-                        className="object-cover w-full h-full"
-                    />
-                </div>
-            )}
-
-            {watermarkIcon && (
-                <div
-                    className="absolute -bottom-8 -right-8 opacity-20 pointer-events-none select-none z-0"
-                    style={{ fontSize: 180 }}
-                >
-                    {watermarkIcon}
-                </div>
-            )}
+            {/* Capa e watermark podem ser adicionados aqui, se necessário */}
         </div>
     );
 }

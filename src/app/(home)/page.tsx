@@ -1,5 +1,5 @@
+'use client';
 import { AudioPlayer } from '@/components/AudioPlayer';
-import { Volume2 } from 'lucide-react';
 import CarouselDemo from './components/carrosel';
 
 export default function Home() {
@@ -20,7 +20,6 @@ export default function Home() {
                     title="Chamada à população 📢"
                     description="Ouça o convite para a consulta à sociedade 2025 do PROEMEM!"
                     audioSrc="/proemem-chamada.mp3"
-                    watermarkIcon={<Volume2 className="size-10" />}
                     className="flex-1"
                 />
 
