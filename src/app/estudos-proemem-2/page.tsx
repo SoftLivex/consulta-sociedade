@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 
@@ -24,6 +25,7 @@ const menuDefault = [
         ),
         title: 'AAS',
         icon: '/faq/aas.png', // exemplo de ícone
+        url: '/pdf/PEPI - R1.pdf',
     },
     {
         message: (
@@ -50,6 +52,7 @@ const menuDefault = [
         ),
         title: 'PGAS',
         icon: '/faq/pgas.png', // exemplo de ícone
+        url: '/pdf/PEPI - R1.pdf',
     },
     {
         message: (
@@ -72,6 +75,7 @@ const menuDefault = [
         ),
         title: 'PEPI',
         icon: '/faq/pepi.png', // exemplo de ícone
+        url: '/pdf/PEPI - R1.pdf',
     },
 ];
 
@@ -111,8 +115,21 @@ const EstudosProemem = () => {
                                         {item.title}
                                     </h3>
                                 </span>
-                                <div className="px-2 py-4 text-pretty leading-relaxed text-justify flex items-center justify-center">
+                                <div className="px-2 py-4 text-pretty leading-relaxed text-justify flex flex-col items-center justify-center">
                                     {item.message}
+                                    <Button
+                                        variant="link"
+                                        className="self-end"
+                                        asChild
+                                    >
+                                        <a
+                                            href={getSource(item.url)}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Ver {item.title}
+                                        </a>
+                                    </Button>
                                 </div>
                             </div>
                         ))}
