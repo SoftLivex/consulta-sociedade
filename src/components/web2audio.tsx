@@ -1,8 +1,6 @@
 'use client';
-import { Play, Square } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { Button } from './ui/button';
 
 const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
     const [isSpeaking, setIsSpeaking] = useState(false);
@@ -20,6 +18,7 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
             .map((line) => line.split(/\s+/));
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const readCurrentPage = () => {
         if (isSpeaking) {
             stopReading();
@@ -100,12 +99,11 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
     // ⚡ Para automaticamente ao trocar de rota
     useEffect(() => {
         stopReading();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname]);
 
     return (
         <>
-            <div className="flex gap-2 fixed top-[10%] right-5 z-50">
+            {/*  <div className="flex gap-2 fixed top-[10%] right-5 z-50">
                 <Button
                     variant={isSpeaking ? 'destructive' : 'default'}
                     onClick={readCurrentPage}
@@ -120,7 +118,7 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
                         </>
                     )}
                 </Button>
-            </div>
+            </div> */}
 
             {isSpeaking && lines.length > 0 && (
                 <div className="fixed bottom-0 left-0 right-0 z-50 bg-black bg-opacity-80 text-white text-center py-2 px-4">

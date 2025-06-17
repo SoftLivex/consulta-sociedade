@@ -10,6 +10,7 @@ import useFormConsultaSociedades from './hooks';
 const title = 'Prefeitura de Manaus Priorizando a Participação Popular';
 const description =
     'A Prefeitura de Manaus quer ouvir você: tire suas dúvidas, participe e ajude a construir uma cidade melhor para todos.';
+
 const ConsultaASociedade = () => {
     const { form, onSubmit, isPending } = useFormConsultaSociedades();
 
