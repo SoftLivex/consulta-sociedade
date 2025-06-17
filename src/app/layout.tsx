@@ -1,5 +1,6 @@
 import TextToSpeechReader from '@/components/web2audio';
 import type { Metadata } from 'next';
+
 import { Toaster } from 'sonner';
 import { Footer } from './(home)/components/footer';
 import { Navbar } from './(home)/components/Navbar';
@@ -26,8 +27,10 @@ export default function RootLayout({
                     <div className="conteudo flex-1 flex flex-col bg-background">
                         {children}
                     </div>
+
                     <Footer />
                 </div>
+
                 <TextToSpeechReader selector=".conteudo" />
 
                 <Toaster
