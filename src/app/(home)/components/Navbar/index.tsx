@@ -13,7 +13,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RenderMenuItem, RenderMobileMenuItem } from './Navigation';
@@ -63,9 +63,9 @@ const menuDefault: Navbar1Props['menu'] = [
 const Navbar = ({
     logo = {
         url: '/',
-        src: getImage('/Logo.svg'),
+        src: getSource('/Logo.svg'),
         alt: 'logo',
-        title: getImage('/Title.svg'),
+        title: getSource('/Title.svg'),
     },
     menu = menuDefault,
 }: Navbar1Props) => {
@@ -83,7 +83,7 @@ const Navbar = ({
                             height="32"
                         />
                         <Image
-                            src={getImage('/bid.svg')}
+                            src={getSource('/bid.svg')}
                             alt={`semed`}
                             className="max-h-6 w-auto object-cover"
                             width="100"
@@ -120,7 +120,7 @@ const Navbar = ({
                                 fill
                             />
                             <Image
-                                src={getImage('/bid.svg')}
+                                src={getSource('/bid.svg')}
                                 alt={`semed`}
                                 className="max-h-6 w-fit object-cover"
                                 fill

@@ -1,4 +1,4 @@
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 
 const ComoParticipar = () => {
@@ -25,7 +25,7 @@ const ComoParticipar = () => {
                     </div>
                     <div className="hidden lg:flex">
                         <Image
-                            src={getImage('/faq/devolutiva.png')}
+                            src={getSource('/faq/devolutiva.png')}
                             className="h-full w-full object-contain"
                             alt={'devolutiva'}
                             width="800"

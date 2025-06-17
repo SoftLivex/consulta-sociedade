@@ -1,11 +1,11 @@
 import { Button } from '@/components/ui/button';
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const faqs = [
     {
-        icon: getImage('/faq/participe.png'),
+        icon: getSource('/faq/participe.png'),
         question: 'Acesse o menu PARTICIPE',
         answer: (
             <>
@@ -20,7 +20,7 @@ const faqs = [
         ),
     },
     {
-        icon: getImage('/faq/id-card.png'),
+        icon: getSource('/faq/id-card.png'),
         question: 'Faça sua identificação',
         answer: (
             <>
@@ -30,12 +30,12 @@ const faqs = [
         ),
     },
     {
-        icon: getImage('/faq/area-interesse.png'),
+        icon: getSource('/faq/area-interesse.png'),
         question: 'Escolha sua área de interesse',
         answer: <>Marque as prioridades entre as opções disponíveis.</>,
     },
     {
-        icon: getImage('/faq/sugestao.png'),
+        icon: getSource('/faq/sugestao.png'),
         question: 'Envie perguntas',
         answer: (
             <>

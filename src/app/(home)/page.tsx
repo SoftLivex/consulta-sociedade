@@ -1,5 +1,6 @@
 'use client';
 import { AudioPlayer } from '@/components/AudioPlayer';
+import { getSource } from '@/lib/getSource';
 import CarouselDemo from './components/carrosel';
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
                 <AudioPlayer
                     title="Chamada à população 📢"
                     description="Ouça o convite para a consulta à sociedade 2025 do PROEMEM!"
-                    audioSrc="/proemem-chamada.mp3"
+                    audioSrc={getSource('/proemem-chamada.mp3')}
                     className="flex-1"
                 />
 

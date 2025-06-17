@@ -1,6 +1,6 @@
 'use client';
 
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/effect-cube';
@@ -49,7 +49,7 @@ export default function CarouselDemo() {
                 (img, index) => (
                     <SwiperSlide key={index} className="select-none relative">
                         <Image
-                            src={getImage(img)}
+                            src={getSource(img)}
                             alt={`banner-${index}`}
                             className="h-full w-full object-cover"
                             width="1000"

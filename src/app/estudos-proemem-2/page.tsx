@@ -1,4 +1,4 @@
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 
 const menuDefault = [
@@ -99,7 +99,7 @@ const EstudosProemem = () => {
                                 <span className="flex flex-col gap-4 shrink-0 items-center justify-center bg-tertiary text-xs py-4 px-8">
                                     <Image
                                         src={
-                                            getImage(item.icon) ||
+                                            getSource(item.icon) ||
                                             '/default-icon.png'
                                         }
                                         height={200}

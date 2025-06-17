@@ -1,4 +1,4 @@
-import { getImage } from '@/lib/getImage';
+import { getSource } from '@/lib/getSource';
 import Image from 'next/image';
 
 interface FaqItem {
@@ -43,7 +43,7 @@ const Faq = () => {
                         >
                             <span className="flex shrink-0 items-center justify-center bg-tertiary text-xs p-8">
                                 <Image
-                                    src={getImage(faq.icon)}
+                                    src={getSource(faq.icon)}
                                     height={200}
                                     width={200}
                                     alt={faq.question}

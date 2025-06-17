@@ -45,12 +45,12 @@ export function AudioPlayer({
     return (
         <div
             className={cn(
-                `rounded-4xl shadow-none flex flex-row items-stretch text-white max-w-xl relative overflow-hidden`,
+                `rounded-4xl shadow-none flex flex-row items-stretch text-white relative overflow-hidden`,
                 background,
                 p.className,
             )}
         >
-            <div className="flex flex-col flex-1 justify-between p-6 z-10">
+            <div className="flex flex-row lg:flex-col gap-1 flex-1 justify-between p-6 z-10">
                 <div>
                     <h2 className="text-3xl font-bold leading-tight mb-1">
                         {p.title}
