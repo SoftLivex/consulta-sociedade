@@ -25,7 +25,7 @@ const menuDefault = [
         ),
         title: 'AAS',
         icon: '/faq/aas.png', // exemplo de ícone
-        url: '/pdf/PEPI - R1.pdf',
+        url: '/pdf/AAS 02_05_25 - R1.pdf',
     },
     {
         message: (
@@ -52,7 +52,7 @@ const menuDefault = [
         ),
         title: 'PGAS',
         icon: '/faq/pgas.png', // exemplo de ícone
-        url: '/pdf/PEPI - R1.pdf',
+        url: '/pdf/PGAS - R1.pdf',
     },
     {
         message: (
@@ -117,11 +117,7 @@ const EstudosProemem = () => {
                                 </span>
                                 <div className="px-2 py-4 text-pretty leading-relaxed text-justify flex flex-col items-center justify-center">
                                     {item.message}
-                                    <Button
-                                        variant="link"
-                                        className="self-end"
-                                        asChild
-                                    >
+                                    <Button className="self-end" asChild>
                                         <a
                                             href={getSource(item.url)}
                                             target="_blank"
