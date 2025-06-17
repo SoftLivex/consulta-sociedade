@@ -1,6 +1,7 @@
 'use client';
 import { Play, Square } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from './ui/button';
 
 const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
@@ -9,9 +10,9 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
     const [currentLineIndex, setCurrentLineIndex] = useState(0);
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+    const pathname = usePathname();
 
     const splitIntoLines = (text: string): string[][] => {
-        // Dividimos por ponto final, quebra de linha, interrogação, exclamação
         return text
             .split(/[\.\!\?\n]+/)
             .map((line) => line.trim())
@@ -61,7 +62,6 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
 
         utterance.onboundary = (event: SpeechSynthesisEvent) => {
             if (event.charIndex !== undefined) {
-                // Determine qual linha e palavra estamos
                 let charCount = 0;
                 for (let l = 0; l < processedLines.length; l++) {
                     const line = processedLines[l];
@@ -97,6 +97,12 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
         setLines([]);
     };
 
+    // ⚡ Para automaticamente ao trocar de rota
+    useEffect(() => {
+        stopReading();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pathname]);
+
     return (
         <>
             <div className="flex gap-2 fixed top-[10%] right-5 z-50">
@@ -112,7 +118,7 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
 
             {isSpeaking && lines.length > 0 && (
                 <div className="fixed bottom-0 left-0 right-0 z-50 bg-black bg-opacity-80 text-white text-center py-2 px-4">
-                    <span className="text-sm md:text-base flex flex-wrap justify-center gap-1 items-center">
+                    <span className="text-base md:text-lg flex flex-wrap justify-center gap-1 items-center">
                         {lines[currentLineIndex]?.map((word, idx) => (
                             <span
                                 key={idx}
