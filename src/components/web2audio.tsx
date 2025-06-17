@@ -109,10 +109,16 @@ const TextToSpeechReader = ({ selector = 'body' }: { selector?: string }) => {
                 <Button
                     variant={isSpeaking ? 'destructive' : 'default'}
                     onClick={readCurrentPage}
-                    size="icon"
-                    className="rounded-full"
                 >
-                    {isSpeaking ? <Square /> : <Play />}
+                    {isSpeaking ? (
+                        <>
+                            <Square /> Parar
+                        </>
+                    ) : (
+                        <>
+                            <Play /> Ouvir
+                        </>
+                    )}
                 </Button>
             </div>
 
