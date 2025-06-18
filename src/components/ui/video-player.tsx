@@ -42,7 +42,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({
             <button
                 type="button"
                 onClick={handlePlayPause}
-                className="cursor-pointer absolute inset-0 flex items-center justify-center transition-opacity duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 z-10"
+                className="cursor-pointer absolute inset-0 flex items-center justify-center transition-opacity duration-200 opacity-0 group-hover:opacity-100 z-10"
                 tabIndex={-1}
                 aria-label={isPlaying ? 'Pausar vídeo' : 'Reproduzir vídeo'}
             >
