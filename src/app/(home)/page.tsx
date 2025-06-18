@@ -16,10 +16,7 @@ export default function Home() {
                     </span>
                 </p>
                 <p className="flex-1 bg-primary text-tertiary-foreground text-6xl flex items-center justify-center rounded-4xl overflow-hidden">
-                    <VideoPlayer
-                        src="https://softlive-public.s3.sa-east-1.amazonaws.com/chamada.mp4"
-                        autoPlay
-                    />
+                    <VideoPlayer src="https://softlive-public.s3.sa-east-1.amazonaws.com/chamada.mp4" />
                 </p>
 
                 {/* <AudioPlayer
