@@ -1,6 +1,5 @@
 'use client';
 import { VideoPlayer } from '@/components/ui/video-player';
-import { getSource } from '@/lib/getSource';
 import CarouselDemo from './components/carrosel';
 
 export default function Home() {
@@ -16,9 +15,9 @@ export default function Home() {
                         <span>CONSULTA À</span> <b>SOCIEDADE 2025</b>
                     </span>
                 </p>
-                <p className="flex-1 bg-tertiary text-tertiary-foreground text-6xl flex items-center justify-center rounded-4xl overflow-hidden">
+                <p className="flex-1 bg-primary text-tertiary-foreground text-6xl flex items-center justify-center rounded-4xl overflow-hidden">
                     <VideoPlayer
-                        src={getSource('/video/chamada.mp4')}
+                        src="https://softlive-public.s3.sa-east-1.amazonaws.com/chamada.mp4"
                         autoPlay
                     />
                 </p>
