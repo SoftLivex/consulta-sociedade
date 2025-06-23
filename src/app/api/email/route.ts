@@ -17,7 +17,7 @@ const FormSchema = z.object({
     numero: z.string().optional(),
     area_tematica: z.string().optional(),
     pergunta: z.string().optional(),
-    recaptcha: z.string().min(1, 'reCAPTCHA obrigatório'), // adicionando recaptcha no schema
+    // recaptcha: z.string().min(1, 'reCAPTCHA obrigatório'), // adicionando recaptcha no schema
 });
 
 export async function POST(request: NextRequest) {
@@ -38,32 +38,6 @@ export async function POST(request: NextRequest) {
         }
 
         const formData = validationResult.data;
-
-        // ✅ Valida o token do reCAPTCHA no Google
-        const secretKey = process.env.RECAPTCHA_SECRET_KEY!;
-        const response = await fetch(
-            `https://www.google.com/recaptcha/api/siteverify`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `secret=${secretKey}&response=${formData.recaptcha}`,
-            },
-        );
-
-        const recaptchaResult = await response.json();
-
-        if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-            return NextResponse.json(
-                {
-                    success: false,
-                    error: 'Falha na verificação do reCAPTCHA',
-                    details: recaptchaResult,
-                },
-                { status: 400 },
-            );
-        }
 
         // Initialize database
         await initializeDatabase();
