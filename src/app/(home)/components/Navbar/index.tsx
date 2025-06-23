@@ -70,7 +70,7 @@ const Navbar = ({
     menu = menuDefault,
 }: Navbar1Props) => {
     return (
-        <section className="py-4 flex flex-col items-center border-b border-border sticky top-0 z-50 bg-sidebar backdrop-blur-2xl">
+        <section className="py-4 px-2 flex flex-col items-center border-b border-border sticky top-0 z-50 bg-sidebar backdrop-blur-2xl">
             <div className="container">
                 {/* Desktop Menu */}
                 <nav className="hidden justify-between xl:flex">
@@ -111,19 +111,21 @@ const Navbar = ({
                         {/* Logo */}
                         <Link
                             href={logo.url}
-                            className="flex items-center gap-4"
+                            className="flex items-center gap-6"
                         >
                             <Image
                                 src={logo.title}
-                                className="max-h-5 w-fit"
+                                className="max-h-5 w-auto"
                                 alt={logo.alt}
-                                fill
+                                width="100"
+                                height="32"
                             />
                             <Image
                                 src={getSource('/bid.svg')}
                                 alt={`semed`}
-                                className="max-h-6 w-fit object-cover"
-                                fill
+                                className="max-h-6 w-auto object-cover"
+                                width="100"
+                                height="32"
                             />
                         </Link>
                         <Sheet>
